@@ -243,7 +243,7 @@ PODS:
     - ReactCommon/callinvoker (= 0.62.13)
   - ReactTestApp-DevSupport (0.2.9)
   - ReactTestApp-Resources (1.0.0-dev)
-  - RNCPicker (1.8.0):
+  - RNCPicker (1.8.1):
     - React-Core
   - SwiftLint (0.40.3)
   - Yoga (1.14.0)
@@ -375,10 +375,10 @@ SPEC CHECKSUMS:
   ReactCommon: 658d0557123c61326f5b8769cb88cc6886a30497
   ReactTestApp-DevSupport: 9a0663d12f90115e646ddbf070566c646a7b9fd1
   ReactTestApp-Resources: 5950ae44720217c6778ff03fb1d906c8fb3ce483
-  RNCPicker: a724b3aa22b182697c190a8fd7b060b66119e136
+  RNCPicker: 914b557e20b3b8317b084aca9ff4b4edb95f61e4
   SwiftLint: dfd554ff0dff17288ee574814ccdd5cea85d76f7
   Yoga: e64d2b3528e7b1449411a4e7db07f651f1b1c241
 
-PODFILE CHECKSUM: f07a63893498b0bc500f32f24c8e580af2b46ea0
+PODFILE CHECKSUM: 291eb32593f2c7e3617b35b9e63cd78431eb5a3e
 
 COCOAPODS: 1.9.3
