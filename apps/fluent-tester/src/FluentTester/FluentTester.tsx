@@ -5,6 +5,7 @@ import { getHostSettingsWin32, useTheme } from '@uifabricshared/theming-react-na
 import * as React from 'react';
 import { ScrollView, View, Text as RNText } from 'react-native';
 import { Picker } from '@react-native-community/picker';
+import { PickerDropDown } from './PickerHelper';
 import { setAppColors } from './CustomThemes';
 import { TestDescription } from './TestComponents';
 import { BASE_TESTPAGE } from './TestComponents/Common/consts';
@@ -62,7 +63,7 @@ const Header: React.FunctionComponent<HeaderProps> = (props: HeaderProps) => {
       <View style={fluentTesterStyles.pickerRoot}>
         <View style={fluentTesterStyles.picker}>
           <RNText style={fluentTesterStyles.pickerLabel}>Platform: </RNText>
-          <Picker
+          <PickerDropDown
             selectedValue={selectedPlatform}
             style={fluentTesterStyles.dropdown}
             onValueChange={(platformValue) => setSelectedPlatform(platformValue.toString())}
@@ -72,7 +73,7 @@ const Header: React.FunctionComponent<HeaderProps> = (props: HeaderProps) => {
             <Picker.Item label="iOS" value="ios" />
             <Picker.Item label="macOS" value="mac" />
             <Picker.Item label="Android" value="android" />
-          </Picker>
+          </PickerDropDown>
         </View>
 
         <View style={fluentTesterStyles.picker}>
