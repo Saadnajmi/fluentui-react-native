@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { View, StyleSheet, Platform, Picker } from 'react-native';
+import { View, StyleSheet, Platform } from 'react-native';
 import Modal from 'react-native-modal';
-// import { Picker } from '../Picker';
+import { Picker } from '../Picker';
 import { Text } from '@fluentui-react-native/experimental-text';
 import { Button } from '@fluentui-react-native/experimental-button';
 import { lightnessOptions, testerTheme } from './CustomThemes';
@@ -72,17 +72,17 @@ const ThemePickerRoot: React.FunctionComponent<{}> = () => {
     <View style={themePickerStyles.pickerRoot}>
       <View style={themePickerStyles.picker}>
         <PickerLabel>Theme: </PickerLabel>
-        {/* <PartPicker initial={testerTheme.themeName} onChange={onThemeSelected} contents={themeChoices} /> */}
+        <PartPicker initial={testerTheme.themeName} onChange={onThemeSelected} contents={themeChoices} />
       </View>
 
       <View style={themePickerStyles.picker}>
         <PickerLabel>Light/Dark: </PickerLabel>
-        {/* <PartPicker initial={testerTheme.appearance} onChange={onAppearanceChange} contents={lightnessOptions} /> */}
+        <PartPicker initial={testerTheme.appearance} onChange={onAppearanceChange} contents={lightnessOptions} />
       </View>
 
       <View style={themePickerStyles.picker}>
         <PickerLabel>Brand: </PickerLabel>
-        {/* <PartPicker initial={testerTheme.brand} onChange={onBrandChange} contents={brandOptions} /> */}
+        <PartPicker initial={testerTheme.brand} onChange={onBrandChange} contents={brandOptions} />
       </View>
     </View>
   );
@@ -98,7 +98,7 @@ export const ThemePickers: React.FunctionComponent<{}> = () => {
     return (
       <View>
         <Button primary content="Styling" onClick={toggleModal} />
-        <Modal isVisible={modalVisible} hasBackdrop={true} o nBackdropPress={() => setModalVisible(false)}>
+        <Modal isVisible={modalVisible} hasBackdrop={true} onBackdropPress={() => setModalVisible(false)}>
           <ThemePickerRoot />
           <Button primary content="Close" onClick={toggleModal} />
         </Modal>
