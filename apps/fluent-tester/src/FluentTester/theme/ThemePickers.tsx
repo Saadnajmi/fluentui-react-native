@@ -1,17 +1,20 @@
 import * as React from 'react';
-import { View, Picker, StyleSheet } from 'react-native';
+import { View, StyleSheet, Platform, Picker } from 'react-native';
+import Modal from 'react-native-modal';
+// import { Picker } from '../Picker';
 import { Text } from '@fluentui-react-native/experimental-text';
+import { Button } from '@fluentui-react-native/experimental-button';
 import { lightnessOptions, testerTheme } from './CustomThemes';
 import { themeChoices, ThemeNames } from './applyTheme';
 import { brandOptions, OfficeBrand } from './applyBrand';
 
 export const themePickerStyles = StyleSheet.create({
   pickerRoot: {
-    flexDirection: 'row',
+    flexDirection: Platform.OS !== 'ios' || Platform.OS !== 'ios' ? 'row' : 'column',
   },
 
   picker: {
-    flexDirection: 'row',
+    flexDirection: Platform.OS !== 'ios' || Platform.OS !== 'ios' ? 'row' : 'column',
     alignItems: 'center',
     padding: 4,
   },
@@ -35,9 +38,9 @@ export const PartPicker: React.FunctionComponent<PartPickerProps> = (props: Part
   const { initial, contents, onChange } = props;
   const [value, setValue] = React.useState(initial);
   const onValueChange = React.useCallback(
-    (newValue: string) => {
-      setValue(newValue);
-      onChange(newValue);
+    (newValue: React.ReactText) => {
+      setValue(newValue.toString());
+      onChange(newValue.toString());
     },
     [setValue, onChange],
   );
@@ -52,7 +55,7 @@ export const PartPicker: React.FunctionComponent<PartPickerProps> = (props: Part
 
 const PickerLabel = Text.customize({ variant: 'bodySemibold' });
 
-export const ThemePickers: React.FunctionComponent<{}> = () => {
+const ThemePickerRoot: React.FunctionComponent<{}> = () => {
   const onBrandChange = React.useCallback((newBrand: string) => {
     testerTheme.brand = newBrand as OfficeBrand;
   }, []);
@@ -69,18 +72,39 @@ export const ThemePickers: React.FunctionComponent<{}> = () => {
     <View style={themePickerStyles.pickerRoot}>
       <View style={themePickerStyles.picker}>
         <PickerLabel>Theme: </PickerLabel>
-        <PartPicker initial={testerTheme.themeName} onChange={onThemeSelected} contents={themeChoices} />
+        {/* <PartPicker initial={testerTheme.themeName} onChange={onThemeSelected} contents={themeChoices} /> */}
       </View>
 
       <View style={themePickerStyles.picker}>
         <PickerLabel>Light/Dark: </PickerLabel>
-        <PartPicker initial={testerTheme.appearance} onChange={onAppearanceChange} contents={lightnessOptions} />
+        {/* <PartPicker initial={testerTheme.appearance} onChange={onAppearanceChange} contents={lightnessOptions} /> */}
       </View>
 
       <View style={themePickerStyles.picker}>
         <PickerLabel>Brand: </PickerLabel>
-        <PartPicker initial={testerTheme.brand} onChange={onBrandChange} contents={brandOptions} />
+        {/* <PartPicker initial={testerTheme.brand} onChange={onBrandChange} contents={brandOptions} /> */}
       </View>
     </View>
   );
+};
+
+export const ThemePickers: React.FunctionComponent<{}> = () => {
+  if (Platform.OS === 'android' || Platform.OS === 'ios') {
+    const [modalVisible, setModalVisible] = React.useState(false);
+    const toggleModal = () => {
+      setModalVisible(!modalVisible);
+    };
+
+    return (
+      <View>
+        <Button primary content="Styling" onClick={toggleModal} />
+        <Modal isVisible={modalVisible} hasBackdrop={true} o nBackdropPress={() => setModalVisible(false)}>
+          <ThemePickerRoot />
+          <Button primary content="Close" onClick={toggleModal} />
+        </Modal>
+      </View>
+    );
+  } else {
+    return <ThemePickerRoot />;
+  }
 };

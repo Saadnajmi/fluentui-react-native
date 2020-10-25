@@ -3,7 +3,7 @@ import { Persona, PersonaSize } from '@fluentui/react-native';
 import { rajeshImageUrl } from './styles';
 import { commonTestStyles as commonStyles } from '../Common/styles';
 import { View, Text, Switch } from 'react-native';
-import { Picker } from '@react-native-community/picker';
+import { Picker } from '../../Picker';
 import { undefinedText } from '../PersonaCoin/styles';
 
 type WithUndefined<T> = T | typeof undefinedText;

@@ -9,8 +9,6 @@ import { BASE_TESTPAGE } from './TestComponents/Common/consts';
 import { fluentTesterStyles } from './TestComponents/Common/styles';
 import { useTheme } from '@fluentui-react-native/theme-types';
 import { ThemePickers } from './theme/ThemePickers';
-import { Picker } from '@react-native-community/picker';
-import { PickerDropDown } from './PickerHelper';
 
 // uncomment the below lines to enable message spy
 /*

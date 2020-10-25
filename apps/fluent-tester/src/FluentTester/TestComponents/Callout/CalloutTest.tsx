@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { ScreenRect, Text, View, Switch } from 'react-native';
-import { Picker } from '@react-native-community/picker';
+import { Picker } from '../../Picker';
 import { Button, Callout, Separator, IFocusable, RestoreFocusEvent } from '@fluentui/react-native';
 import { CALLOUT_TESTPAGE } from './consts';
 import { Test, TestSection, PlatformStatus } from '../Test';

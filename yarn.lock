@@ -2084,10 +2084,10 @@
     stacktrace-parser "^0.1.3"
     whatwg-fetch "^3.0.0"
 
-"@office-iss/rex-win32@0.62.12-tenantreactnativewin-13326":
-  version "0.62.12-tenantreactnativewin-13326"
-  resolved "https://registry.yarnpkg.com/@office-iss/rex-win32/-/rex-win32-0.62.12-tenantreactnativewin-13326.tgz#99fd09ca94a6731496386510a221609187418b73"
-  integrity sha512-HPFgEXvqRPHyn24ENcMyaq0PzM5/Q5MVbo+S0vzM3JwKvbIZJJhM0ecsmmx73tEwmdKDi8zyWVIdohEJcqxLiw==
+"@office-iss/rex-win32@0.62.12-devmain.13420.10000":
+  version "0.62.12-devmain.13420.10000"
+  resolved "https://registry.yarnpkg.com/@office-iss/rex-win32/-/rex-win32-0.62.12-devmain.13420.10000.tgz#fdf448ab220822ebe32ebba318aa693018ef6962"
+  integrity sha512-M2Bdg+G2O0AJhAVlvJ2io8mVd5Zj90SG8ew6OPjIXs0TGhsRP+OVE40hH9St1JeFomT6zC+0PpsMogTCAvy8AQ==
   dependencies:
     command-line-args "^5.0.2"
     command-line-usage "^5.0.5"
@@ -2187,19 +2187,6 @@
     logkitty "^0.7.1"
     slash "^3.0.0"
     xmldoc "^1.1.2"
-
-"@react-native-community/cli-platform-ios@^4.13.0":
-  version "4.13.0"
-  resolved "https://registry.yarnpkg.com/@react-native-community/cli-platform-ios/-/cli-platform-ios-4.13.0.tgz#a738915c68cac86df54e578b59a1311ea62b1aef"
-  integrity sha512-6THlTu8zp62efkzimfGr3VIuQJ2514o+vScZERJCV1xgEi8XtV7mb/ZKt9o6Y9WGxKKkc0E0b/aVAtgy+L27CA==
-  dependencies:
-    "@react-native-community/cli-tools" "^4.13.0"
-    chalk "^3.0.0"
-    glob "^7.1.3"
-    js-yaml "^3.13.1"
-    lodash "^4.17.15"
-    plist "^3.0.1"
-    xcode "^2.0.0"
 
 "@react-native-community/cli-platform-ios@^4.5.0":
   version "4.8.0"
@@ -2933,14 +2920,6 @@
   version "7.0.4"
   resolved "https://registry.yarnpkg.com/@uifabric/prettier-rules/-/prettier-rules-7.0.4.tgz#03082a6cc4b586104738a24892c56e0f1d3df1b6"
   integrity sha512-PK60wLAjPrG2l93r1l/VY2BmnC1la0oxIXYBuln5DOAFJcSXMea9RxoNjuqhhqZGZo6aLjO7lW070MeVOvkABQ==
-
-"@uifabricshared/theming-react-native@0.7.76":
-  version "0.7.76"
-  resolved "https://registry.yarnpkg.com/@uifabricshared/theming-react-native/-/theming-react-native-0.7.76.tgz#ad6ccce89eef50e83a7897cf7dcd29ea00e61b07"
-  integrity sha512-PpYARlLaWKBi++PPFkPQCfNABQVxchjh1B+aLo7xTE1Ph4sU5hNock/0lZ0ApQQLRgR+Lmyw9eVGOBm/TL6LUw==
-  dependencies:
-    "@uifabricshared/theme-registry" ">=0.3.69 <1.0.0"
-    "@uifabricshared/theming-ramp" ">=0.10.5 <1.0.0"
 
 "@wdio/allure-reporter@5.22.4":
   version "5.22.4"
@@ -13882,6 +13861,13 @@ react-is@^16.12.0, react-is@^16.13.1, react-is@^16.8.1, react-is@^16.8.4, react-
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
   integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
 
+react-native-animatable@1.3.3:
+  version "1.3.3"
+  resolved "https://registry.yarnpkg.com/react-native-animatable/-/react-native-animatable-1.3.3.tgz#a13a4af8258e3bb14d0a9d839917e9bb9274ec8a"
+  integrity sha512-2ckIxZQAsvWn25Ho+DK3d1mXIgj7tITkrS4pYDvx96WyOttSvzzFeQnM2od0+FUMzILbdHDsDEqZvnz1DYNQ1w==
+  dependencies:
+    prop-types "^15.7.2"
+
 react-native-macos@^0.62.0-0:
   version "0.62.16"
   resolved "https://registry.yarnpkg.com/react-native-macos/-/react-native-macos-0.62.16.tgz#cbc3a94406f18dba73ce795da1ee8398d71100c6"
@@ -13918,6 +13904,14 @@ react-native-macos@^0.62.0-0:
     stacktrace-parser "^0.1.3"
     use-subscription "^1.0.0"
     whatwg-fetch "^3.0.0"
+
+react-native-modal@^11.5.6:
+  version "11.5.6"
+  resolved "https://registry.yarnpkg.com/react-native-modal/-/react-native-modal-11.5.6.tgz#bb25a78c35a5e24f45de060e5f64284397d38a87"
+  integrity sha512-APGNfbvgC4hXbJqcSADu79GLoMKIHUmgR3fDQ7rCGZNBypkStSP8imZ4PKK/OzIZZfjGU9aP49jhMgGbhY9KHA==
+  dependencies:
+    prop-types "^15.6.2"
+    react-native-animatable "1.3.3"
 
 react-native-svg-transformer@^0.14.3:
   version "0.14.3"
