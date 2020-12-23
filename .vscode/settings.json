@@ -62,13 +62,5 @@
   "[handlebars]": {
     "editor.formatOnSave": false
   },
-  "cSpell.words": [
-    "Semibold",
-    "TESTPAGE",
-    "beachball",
-    "consts",
-    "fluentui",
-    "macos",
-    "nuget"
-  ]
+  "cSpell.words": ["Larrson", "TESTPAGE", "beachball", "consts", "fluentui", "macos", "nuget"]
 }
