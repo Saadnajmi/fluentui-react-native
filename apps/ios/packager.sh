@@ -6,7 +6,7 @@
 
 # scripts directory
 THIS_DIR=$(cd -P "$(dirname "$(readlink "${BASH_SOURCE[0]}" || echo "${BASH_SOURCE[0]}")")" && pwd)
-REACT_NATIVE_ROOT="$THIS_DIR/../../node_modules/react-native"
+REACT_NATIVE_ROOT="$THIS_DIR/../../node_modules/react-native-macos"
 # Application root directory - General use case: react-native is a dependency
 PROJECT_ROOT="$THIS_DIR/"
 

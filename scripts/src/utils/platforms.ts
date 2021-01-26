@@ -9,11 +9,11 @@ const _defaultVersion = 'react-native';
 const _rnVersions: { [key in PlatformValue]: string } = {
   default: _defaultVersion,
   android: _defaultVersion,
-  ios: _defaultVersion,
+  ios: _defaultVersion, //TODO
   macos: 'react-native-macos',
   web: 'react-native-web',
   win32: '@office-iss/react-native-win32',
-  windows: 'react-native-windows'
+  windows: 'react-native-windows',
 };
 
 export function getRNVersion(platform?: PlatformValue): string {

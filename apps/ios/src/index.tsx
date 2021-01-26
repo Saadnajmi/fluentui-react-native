@@ -2,7 +2,7 @@
 
 import {FluentTesterApp} from '@fluentui-react-native/tester';
 import * as React from 'react';
-import {AppRegistry, SafeAreaView} from 'react-native';
+import {AppRegistry, SafeAreaView} from 'react-native-macos';
 
 const FluentTester: React.FunctionComponent = () => {
   return (

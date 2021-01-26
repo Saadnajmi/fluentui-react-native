@@ -15,10 +15,15 @@
  */
 'use strict';
 
+const path = require('path');
+
 module.exports = {
   project: {
     ios: {
       project: 'src/FluentTester.xcworkspace',
     },
   },
+  reactNativePath: path.dirname(
+    require.resolve('react-native-macos/package.json'),
+  ),
 };
