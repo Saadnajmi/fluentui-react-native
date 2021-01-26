@@ -69,6 +69,7 @@
     "consts",
     "fluentui",
     "macos",
-    "nuget"
+    "nuget",
+    "uifabricshared"
   ]
 }
