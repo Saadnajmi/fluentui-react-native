@@ -16,7 +16,7 @@
     "lint": "fluentui-scripts eslint",
     "start": "react-native start",
     "test": "fluentui-scripts jest",
-    "ios": "react-native run-ios --scheme ReactTestApp --project-path src"
+    "ios": "react-native run-ios --scheme FluentTester --project-path src"
   },
   "dependencies": {
     "@fluentui-react-native/tester": "^0.14.0",
