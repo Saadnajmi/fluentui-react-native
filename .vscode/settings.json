@@ -62,5 +62,18 @@
   "[handlebars]": {
     "editor.formatOnSave": false
   },
-  "cSpell.words": ["Larrson", "TESTPAGE", "beachball", "consts", "fluentui", "macos", "nuget"]
+  "cSpell.words": [
+    "Larrson",
+    "Semibold",
+    "Subheadline",
+    "TESTPAGE",
+    "beachball",
+    "consts",
+    "fluentui",
+    "macos",
+    "monospace",
+    "nuget",
+    "uifabricshared",
+    "unemphasized"
+  ]
 }
