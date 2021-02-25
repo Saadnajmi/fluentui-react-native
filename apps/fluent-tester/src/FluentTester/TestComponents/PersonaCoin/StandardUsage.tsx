@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { PersonaSize, PersonaCoinColor, PersonaCoin, PersonaPresence } from '@fluentui/react-native';
 import { Switch, View, Text } from 'react-native';
-import { Picker } from '../../Picker';
+import { Picker } from '@react-native-picker/picker';
 import { satyaPhotoUrl, undefinedText } from './styles';
 import { commonTestStyles as commonStyles } from '../Common/styles';
 

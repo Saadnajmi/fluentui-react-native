@@ -1,9 +1,7 @@
 import * as React from 'react';
 import { View, StyleSheet, Platform } from 'react-native';
-import Modal from 'react-native-modal';
-import { Picker } from '../Picker';
+import { Picker } from '@react-native-picker/picker';
 import { Text } from '@fluentui-react-native/experimental-text';
-import { Button } from '@fluentui-react-native/experimental-button';
 import { lightnessOptions, testerTheme } from './CustomThemes';
 import { themeChoices, ThemeNames } from './applyTheme';
 import { brandOptions, OfficeBrand } from './applyBrand';
@@ -90,18 +88,9 @@ const ThemePickerRoot: React.FunctionComponent<{}> = () => {
 
 export const ThemePickers: React.FunctionComponent<{}> = () => {
   if (Platform.OS === 'android' || Platform.OS === 'ios') {
-    const [modalVisible, setModalVisible] = React.useState(false);
-    const toggleModal = () => {
-      setModalVisible(!modalVisible);
-    };
-
     return (
       <View>
-        <Button primary content="Styling" onClick={toggleModal} />
-        <Modal isVisible={modalVisible} hasBackdrop={true} onBackdropPress={() => setModalVisible(false)}>
-          <ThemePickerRoot />
-          <Button primary content="Close" onClick={toggleModal} />
-        </Modal>
+        <ThemePickerRoot />
       </View>
     );
   } else {

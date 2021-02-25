@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { View, Switch } from 'react-native';
-import { Picker } from '../../Picker';
+import { Picker } from '@react-native-picker/picker';
 import { FocusZone, Button, Text, FocusZoneDirection, Checkbox } from '@fluentui/react-native';
 import { Test, TestSection, PlatformStatus } from '../Test';
 import { FOCUSZONE_TESTPAGE } from './consts';
