@@ -17,8 +17,6 @@ import { Icon } from '@fluentui-react-native/icon';
 import { compose, withSlots, UseSlots, mergeProps } from '@fluentui-react-native/framework';
 import { stylingSettings } from './ContextualMenuItem.styling';
 
-
-
 export const ContextualMenuItem = compose<ContextualMenuItemType>({
   displayName: contextualMenuItemName,
   ...stylingSettings,
@@ -29,20 +27,18 @@ export const ContextualMenuItem = compose<ContextualMenuItemType>({
     content: Text,
   },
   render: (props: ContextualMenuItemProps, useSlots: UseSlots<ContextualMenuItemType>) => {
-    const Slots = useSlots(props)
+    const Slots = useSlots(props);
     return (rest: ContextualMenuItemProps, ...children: React.ReactNode[]) => {
-      const { icon, content, ...mergedProps } = mergeProps(props, rest);
+      const { icon, text, ...mergedProps } = mergeProps(props, rest);
       return (
         <Slots.root {...mergedProps}>
           <Slots.stack>
             {icon && <Slots.icon />}
-            {content && <Slots.content />}
+            {text && <Slots.content />}
             {children}
           </Slots.stack>
         </Slots.root>
       );
-    }
-
-  }
-
-}
+    };
+  },
+});

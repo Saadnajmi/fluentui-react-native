@@ -1,10 +1,10 @@
 /** @jsx withSlots */
 import * as React from 'react';
 import { View } from 'react-native';
-import { compose, withSlots, UseSlots, mergeProps } from '@fluentui-react-native/framework';
+import { compose, withSlots, UseSlots } from '@fluentui-react-native/framework';
 import { stylingSettings } from './SubmenuItem.styling';
 import { Icon } from '@fluentui-react-native/Icon';
-import { Text} from '@fluentui-react-native/experimental-text';
+import { Text } from '@fluentui-react-native/experimental-text';
 import { submenuItemName, SubmenuItemProps, SubmenuItemType } from './SubmenuItem.types';
 
 export const SubmenuItem = compose<SubmenuItemType>({
@@ -19,22 +19,20 @@ export const SubmenuItem = compose<SubmenuItemType>({
     chevron: Icon,
   },
   render: (props: SubmenuItemProps, useSlots: UseSlots<SubmenuItemType>) => {
-    const Slots = useSlots(props)
+    const Slots = useSlots(props);
     return (rest: SubmenuItemProps, ...children: React.ReactNode[]) => {
       return (
-      <Slots.root>
-        <Slots.leftstack>
-          <Slots.icon />
-          <Slots.content />
+        <Slots.root {...rest}>
+          <Slots.leftstack>
+            <Slots.icon />
+            <Slots.content />
             {children}
-        </Slots.leftstack>
-        <Slots.rightstack>
+          </Slots.leftstack>
+          <Slots.rightstack>
             <Slots.chevron />
-        </Slots.rightstack>
-      </Slots.root>
+          </Slots.rightstack>
+        </Slots.root>
       );
-    }
-
-  }
-
-}
+    };
+  },
+});

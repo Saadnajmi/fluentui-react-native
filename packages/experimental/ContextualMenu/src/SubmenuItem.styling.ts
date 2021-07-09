@@ -1,13 +1,8 @@
 import { UseStylingOptions } from '@fluentui-react-native/framework';
-import { SubmenuItemProps, SubmenuItemSlotProps, SubmenuItemTokens } from './SubmenuItem.types';
+import { submenuItemName, SubmenuItemProps, SubmenuItemSlotProps, SubmenuItemTokens } from './SubmenuItem.types';
 
 export const stylingSettings: UseStylingOptions<SubmenuItemProps, SubmenuItemSlotProps, SubmenuItemTokens> = {
-  tokens: {
-    backgroundColor: 'menuBackground',
-    color: 'menuItemText',
-    borderColor: 'transparent',
-    borderWidth: 1,
-  },
+  tokens: [() => ({}), submenuItemName],
   slotProps: {
     root: {
       accessible: true,
