@@ -24,13 +24,12 @@
   },
   "dependencies": {
     "@fluentui-react-native/adapters": ">=0.6.1 <1.0.0",
-    "@fluentui-react-native/framework": "0.5.6",
-    "@fluentui-react-native/interactive-hooks": ">=0.10.8 <1.0.0",
     "@fluentui-react-native/experimental-text": ">=0.5.4 <1.0.0",
+    "@fluentui-react-native/framework": "0.5.6",
+    "@fluentui-react-native/icon": "0.7.5",
+    "@fluentui-react-native/interactive-hooks": ">=0.10.8 <1.0.0",
     "@fluentui-react-native/tokens": ">=0.9.3 <1.0.0",
     "@fluentui-react-native/use-styling": ">=0.6.1 <1.0.0",
-    "@fluentui-react-native/icon": "0.7.5",
-    "@fluentui-react-native/text": ">=0.9.6 <1.0.0",
     "react-native-svg": "^12.1.1",
     "react-native-svg-transformer": "^0.14.3"
   },

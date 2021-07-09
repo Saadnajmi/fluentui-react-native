@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { ViewProps } from 'react-native';
-import { IRenderData } from '@uifabricshared/foundation-composable';
-import { ITextProps } from '@fluentui-react-native/text';
+import { TextProps } from '@fluentui-react-native/experimental-text';
 import { IPressableProps } from '@fluentui-react-native/pressable';
 import { FontTokens, IForegroundColorTokens, IBackgroundColorTokens, IBorderTokens } from '@fluentui-react-native/tokens';
 import { IFocusable, IPressableState } from '@fluentui-react-native/interactive-hooks';
@@ -83,11 +82,8 @@ export interface ContextualMenuItemSlotProps {
   root: React.PropsWithRef<ViewProps>;
   stack: ViewProps;
   icon: IconProps;
-  content: ITextProps;
+  content: TextProps;
 }
-
-export type ContextualMenuItemRenderData = IRenderData<ContextualMenuItemSlotProps, ContextualMenuItemState>;
-
 export interface ContextualMenuItemType {
   props: ContextualMenuItemProps;
   tokens: ContextualMenuItemTokens;
