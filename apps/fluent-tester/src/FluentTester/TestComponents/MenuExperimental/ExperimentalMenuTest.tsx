@@ -2,7 +2,7 @@
 import * as React from 'react';
 import { Text, View, Switch } from 'react-native';
 import { Button, ContextualMenuItem, Submenu, SubmenuItem, Separator } from '@fluentui/react-native';
-import { ContextualMenu } from '../../packages/experimental/Menu/src';
+import { ContextualMenu } from '@fluentui-react-native/experimental-contextual-menu';
 import { EXPERIMENTALMENU_TESTPAGE } from './consts';
 import { Test, TestSection, PlatformStatus } from '../Test';
 import { SvgIconProps, FontIconProps } from '@fluentui-react-native/icon';
