@@ -1,6 +1,7 @@
 import { TestDescription } from './TestComponents';
 import { AvatarTest, HOMEPAGE_AVATAR_BUTTON } from './TestComponents/Avatar';
 import { ButtonTest, HOMEPAGE_BUTTON_BUTTON } from './TestComponents/Button';
+import { ContextualMenuTest, HOMEPAGE_EXPERIMENTALMENU_BUTTON } from './TestComponents/MenuExperimental';
 import { CheckboxTest, HOMEPAGE_CHECKBOX_BUTTON } from './TestComponents/Checkbox';
 import { ExperimentalButtonTest, HOMEPAGE_BUTTON_BUTTONEXPERIMENTAL } from './TestComponents/ButtonExperimental';
 import { HOMEPAGE_ICON_BUTTON, IconTest } from './TestComponents/Icon';
@@ -26,6 +27,11 @@ export const tests: TestDescription[] = [
     name: 'Button Test',
     component: ButtonTest,
     testPage: HOMEPAGE_BUTTON_BUTTON,
+  },
+  {
+    name: 'Experimental Menu Test',
+    component: ContextualMenuTest,
+    testPage: HOMEPAGE_EXPERIMENTALMENU_BUTTON,
   },
   {
     name: 'Experimental Button',
