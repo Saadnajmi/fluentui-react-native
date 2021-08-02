@@ -1,0 +1,81 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ActivityIndicator default 1`] = `
+<View
+  accessibilityLabel="progressbar"
+  accessibilityState={
+    Object {
+      "busy": true,
+    }
+  }
+  accessible={true}
+  activityIndicatorColor="#BDBDBD"
+  lineThickness="medium"
+  size="medium"
+  style={
+    Object {
+      "height": 24,
+      "opacity": 1,
+      "width": 24,
+    }
+  }
+>
+  <RNSVGSvgView
+    bbHeight={24}
+    bbWidth={24}
+    focusable={false}
+    height={24}
+    style={
+      Array [
+        Object {
+          "backgroundColor": "transparent",
+          "borderWidth": 0,
+        },
+        Object {
+          "transform": Array [
+            Object {
+              "rotateZ": "0deg",
+            },
+            Object {
+              "perspective": 10,
+            },
+          ],
+        },
+        Object {
+          "flex": 0,
+          "height": 24,
+          "width": 24,
+        },
+      ]
+    }
+    width={24}
+  >
+    <RNSVGGroup
+      matrix={
+        Array [
+          1,
+          0,
+          0,
+          1,
+          0,
+          0,
+        ]
+      }
+    >
+      <RNSVGPath
+        d="M1 12 a11 11 0 1 1 11 11"
+        propList={
+          Array [
+            "stroke",
+            "strokeWidth",
+            "strokeLinecap",
+          ]
+        }
+        stroke={-4342339}
+        strokeLinecap={1}
+        strokeWidth={2}
+      />
+    </RNSVGGroup>
+  </RNSVGSvgView>
+</View>
+`;
