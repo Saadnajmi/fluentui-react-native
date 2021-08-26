@@ -9,6 +9,7 @@ import { settings } from './Button.settings';
 import { backgroundColorTokens, borderTokens, textTokens, foregroundColorTokens, getPaletteFromTheme } from '@fluentui-react-native/tokens';
 import { filterViewProps } from '@fluentui-react-native/adapters';
 import { mergeSettings } from '@uifabricshared/foundation-settings';
+
 import {
   useAsPressable,
   useKeyCallback,
@@ -21,12 +22,15 @@ import { Icon } from '@fluentui-react-native/icon';
 export const Button = compose<IButtonType>({
   displayName: buttonName,
   usePrepareProps: (userProps: IButtonProps, useStyling: IUseComposeStyling<IButtonType>) => {
+    const defaultComponentRef = React.useRef(null);
     const {
       icon,
+      startIcon,
+      endIcon,
       content,
       onAccessibilityTap = userProps.onClick,
       accessibilityLabel = userProps.content,
-      componentRef = React.useRef(null),
+      componentRef = defaultComponentRef,
       testID,
       onClick,
       ...rest
@@ -43,7 +47,8 @@ export const Button = compose<IButtonType>({
         ...pressable.state,
         disabled: !!userProps.disabled,
         content: !!content,
-        icon: !!icon,
+        startIcon: !!startIcon || !!icon,
+        endIcon: !!endIcon,
       },
     };
 
@@ -62,7 +67,8 @@ export const Button = compose<IButtonType>({
         onKeyUp: onKeyUp,
       },
       content: { children: content, testID: testID },
-      icon: createIconProps(icon),
+      startIcon: createIconProps(startIcon || icon),
+      endIcon: createIconProps(endIcon),
     });
 
     return { slotProps, state };
@@ -70,12 +76,14 @@ export const Button = compose<IButtonType>({
   settings,
   render: (Slots: ISlots<IButtonSlotProps>, renderData: IButtonRenderData, ...children: React.ReactNode[]) => {
     const info = renderData.state!.info;
+
     return (
       <Slots.root>
         <Slots.stack>
-          {info.icon && <Slots.icon />}
+          {info.startIcon && <Slots.startIcon />}
           {info.content && <Slots.content />}
           {children}
+          {info.endIcon && <Slots.endIcon />}
         </Slots.stack>
       </Slots.root>
     );
@@ -83,14 +91,16 @@ export const Button = compose<IButtonType>({
   slots: {
     root: View,
     stack: { slotType: View, filter: filterViewProps },
-    icon: { slotType: Icon as React.ComponentType<object> },
+    startIcon: { slotType: Icon as React.ComponentType },
     content: Text,
+    endIcon: { slotType: Icon as React.ComponentType },
   },
   styles: {
     root: [backgroundColorTokens, borderTokens],
     stack: [],
-    icon: [{ source: 'iconColor', lookup: getPaletteFromTheme, target: 'color' }],
+    startIcon: [{ source: 'iconColor', lookup: getPaletteFromTheme, target: 'color' }],
     content: [textTokens, foregroundColorTokens],
+    endIcon: [{ source: 'iconColor', lookup: getPaletteFromTheme, target: 'color' }],
   },
 });
 

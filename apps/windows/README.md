@@ -1,5 +1,7 @@
 # Running the FluentUI Tester on Windows
 
+`FluentUI Tester` is the test app that we use to test our FluentUI components during development. It uses the [react-native-test app](https://github.com/microsoft/react-native-test-app) under the covers, and loads the fluent-tester bundle.
+
 ## Prerequisites
 
 - [Node.js](https://nodejs.org/en/download/)
@@ -16,7 +18,7 @@ As with normal UWP app development, the UWP test harness that loads the JS bundl
 1. Windows+R to open the Run Dialog and type in `certmgr.msc`. **NOTE:** For some reason this takes some time on my machine.
 2. Expand `Personal` and right click on `Certificates`
 3. Under `All tasks` click `Import`
-4. For the Current User, `Browse` to find `FluentTester_TemporaryKey.pfx` in your local clone of the repo. It is currently under [fluentui-react-native/apps/windows/windows/FluentTester](windows/FluentTester).
+4. For the Current User, `Browse` to find `FluentTester_TemporaryKey.pfx` in your local clone of the repo.
 5. On the next page, type in 'password' for the password.
    ![Certificate Manager Browse Window](./../../assets/CertFile.png)
 

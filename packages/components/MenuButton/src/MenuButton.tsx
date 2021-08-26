@@ -1,10 +1,12 @@
 /** @jsx withSlots */
 import React, { useRef, useState, useCallback } from 'react';
-import { Button } from '@fluentui-react-native/button';
+import { PrimaryButton, Button } from '@fluentui-react-native/button';
 import { ContextualMenu, ContextualMenuItem, SubmenuItem, Submenu } from '@fluentui-react-native/contextual-menu';
 import { IUseComposeStyling, compose } from '@uifabricshared/foundation-compose';
 import { mergeSettings } from '@uifabricshared/foundation-settings';
 import { ISlots, withSlots } from '@uifabricshared/foundation-composable';
+import { backgroundColorTokens, borderTokens } from '@fluentui-react-native/tokens';
+import chevronIconSvg from './chevron.svg';
 
 import {
   MenuButtonName,
@@ -18,7 +20,7 @@ import {
 export const MenuButton = compose<MenuButtonType>({
   displayName: MenuButtonName,
   usePrepareProps: (userProps: MenuButtonProps, useStyling: IUseComposeStyling<MenuButtonType>) => {
-    const { menuItems, content, icon, disabled, onItemClick, contextualMenu } = userProps;
+    const { menuItems, content, startIcon, disabled, onItemClick, contextualMenu, primary } = userProps;
 
     const stdBtnRef = useRef(null);
     const [showContextualMenu, setShowContextualMenu] = useState(false);
@@ -58,20 +60,32 @@ export const MenuButton = compose<MenuButtonType>({
     const state: MenuButtonState = {
       context: {
         showContextualMenu: !!showContextualMenu,
+        primary: !!primary
       },
     };
 
+    const chevronIconProps = {
+      svgSource: {
+        src: chevronIconSvg
+      },
+      width: 12,
+      height: 16,
+    };
+
     const styleProps = useStyling(userProps, (override: string) => state[override] || userProps[override]);
+    const buttonProps = {
+      content,
+      disabled,
+      startIcon,
+      componentRef: stdBtnRef,
+      onClick: toggleShowContextualMenu,
+      endIcon: chevronIconProps,
+    };
 
     const slotProps = mergeSettings<MenuButtonSlotProps>(styleProps, {
       root: {},
-      button: {
-        content,
-        disabled,
-        icon,
-        componentRef: stdBtnRef,
-        onClick: toggleShowContextualMenu,
-      },
+      button: buttonProps,
+      primaryButton: buttonProps,
       contextualMenu: {
         onItemClick,
         target: stdBtnRef,
@@ -88,11 +102,15 @@ export const MenuButton = compose<MenuButtonType>({
   },
   slots: {
     root: React.Fragment,
-    button: { slotType: Button as React.ComponentType<object> },
-    contextualMenu: { slotType: ContextualMenu as React.ComponentType<object> },
+    button: { slotType: Button as React.ComponentType },
+    primaryButton: { slotType: PrimaryButton as React.ComponentType },
+    contextualMenu: { slotType: ContextualMenu as React.ComponentType },
     contextualMenuItems: React.Fragment,
   },
-  styles: {},
+  styles: {
+    contextualMenu: [backgroundColorTokens, borderTokens],
+    button: [backgroundColorTokens, borderTokens],
+  },
   render: (Slots: ISlots<MenuButtonSlotProps>, renderData: MenuButtonRenderData) => {
     if (!(renderData.state && renderData.slotProps)) {
       return null;
@@ -102,7 +120,10 @@ export const MenuButton = compose<MenuButtonType>({
 
     return (
       <Slots.root>
-        <Slots.button />
+        {
+          context.primary ?
+          <Slots.primaryButton /> : <Slots.button />
+        }
         {context.showContextualMenu && (
           <Slots.contextualMenu>
             {menuItems.map((menuItem) => {

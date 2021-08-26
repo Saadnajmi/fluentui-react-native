@@ -23,7 +23,9 @@ export const Checkbox = compose<ICheckboxType>({
   displayName: checkboxName,
 
   usePrepareProps: (userProps: ICheckboxProps, useStyling: IUseComposeStyling<ICheckboxType>) => {
+    const defaultComponentRef = React.useRef(null);
     const {
+      accessibilityLabel,
       ariaLabel,
       checked,
       defaultChecked,
@@ -31,7 +33,7 @@ export const Checkbox = compose<ICheckboxType>({
       disabled,
       label,
       onChange,
-      componentRef = React.useRef(null),
+      componentRef = defaultComponentRef,
       ...rest
     } = userProps;
 
@@ -81,7 +83,7 @@ export const Checkbox = compose<ICheckboxType>({
         ref: buttonRef,
         ...pressable.props,
         accessibilityRole: 'checkbox',
-        accessibilityLabel: ariaLabel || label,
+        accessibilityLabel: accessibilityLabel ?? ariaLabel ?? label,
         accessibilityState: { disabled: state.disabled, checked: state.checked },
         accessibilityActions: [{ name: 'Toggle', label: checkboxSelectActionLabel }],
         onAccessibilityAction: onAccessibilityAction,

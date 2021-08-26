@@ -13,6 +13,7 @@ import RadioGroupTestPage from '../../RadioGroup/pages/RadioGroupTestPage.win';
 import SeparatorTestPage from '../../Separator/pages/SeparatorTestPage.win';
 import SvgTestPage from '../../Svg/pages/SvgTestPage.win';
 import TextTestPage from '../../Text/pages/TextTestPage.win';
+import TabsTestPage from '../../Tabs/pages/TabsTestPage.win';
 import ThemeTestPage from '../../Theme/pages/ThemeTestPage.win';
 import BootTestPage from '../pages/BootTestPage.win';
 
@@ -116,6 +117,12 @@ describe('Click on each test page and check if it renders', function () {
     BootTestPage.clickAndGoToTextPage();
     TextTestPage.waitForPageDisplayed(PAGE_TIMEOUT);
     expect(TextTestPage.isPageLoaded()).toBeTruthy();
+  });
+
+  it('Tabs Test Page', () => {
+    BootTestPage.clickAndGoToTabsPage();
+    TabsTestPage.waitForPageDisplayed(PAGE_TIMEOUT);
+    expect(TabsTestPage.isPageLoaded()).toBeTruthy();
   });
 
   it('Theme Test Page', () => {
