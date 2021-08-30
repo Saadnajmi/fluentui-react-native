@@ -1,8 +1,7 @@
 import * as React from 'react';
-import { ScreenRect, ViewStyle } from 'react-native';
+import { ScreenRect, View, ViewStyle } from 'react-native';
 import { IRenderData } from '@uifabricshared/foundation-composable';
 import { IBackgroundColorTokens, IBorderTokens } from '@fluentui-react-native/tokens';
-import { IFocusable } from '@fluentui-react-native/interactive-hooks';
 
 export const calloutName = 'Callout';
 
@@ -115,9 +114,9 @@ export interface ICalloutProps extends ICalloutTokens {
   accessibilityRole?: string;
 
   /**
-   * A RefObject to access the IFocusable interface. Use this to access the public methods and properties of the component.
+   * A RefObject. Use this to access the public methods and properties of the component.
    */
-  componentRef?: React.RefObject<IFocusable>;
+  componentRef?: React.RefObject<View>;
 
   /**
    * Adds a beak to the Callout, pointing to the anchor target.

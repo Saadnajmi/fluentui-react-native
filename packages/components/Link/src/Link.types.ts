@@ -1,9 +1,9 @@
 import * as React from 'react';
-import { ViewProps } from 'react-native';
+import { View, ViewProps } from 'react-native';
 import { IRenderData } from '@uifabricshared/foundation-composable';
 import { IForegroundColorTokens, FontTokens, IBorderTokens } from '@fluentui-react-native/tokens';
 import { ITextProps } from '@fluentui-react-native/text';
-import { IFocusable, IPressableState, IWithPressableOptions } from '@fluentui-react-native/interactive-hooks';
+import { IPressableState, IWithPressableOptions } from '@fluentui-react-native/interactive-hooks';
 
 export const linkName = 'RNFLink';
 
@@ -54,7 +54,7 @@ export interface ILinkProps extends IWithLinkOptions<ITextProps> {
   /**
    * A RefObject to access the IButton interface. Use this to access the public methods and properties of the component.
    */
-  componentRef?: React.RefObject<IFocusable>;
+  componentRef?: React.RefObject<View>;
 }
 
 export type ILinkSlotProps = {

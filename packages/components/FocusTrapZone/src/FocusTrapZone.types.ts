@@ -1,12 +1,12 @@
 import * as React from 'react';
 import { IViewProps } from '@fluentui-react-native/adapters';
-import { IFocusable } from '@fluentui-react-native/interactive-hooks';
+import { View } from 'react-native';
 
 export type IFocusTrapZoneProps<TBase = IViewProps> = TBase & {
   /**
    * A RefObject to access the IFocusTrapZone interface. Use this to access the public methods and properties of the component.
    */
-  componentRef?: React.RefObject<IFocusable>;
+  componentRef?: React.RefObject<View>;
   /**
    * Specifies whether the FocusTrapZone's focus trapping behavior is disabled. True, if disabled.
    * @default false

@@ -1,10 +1,10 @@
 import * as React from 'react';
-import { ViewProps } from 'react-native';
+import { View, ViewProps } from 'react-native';
 import { IRenderData } from '@uifabricshared/foundation-composable';
 import { ITextProps } from '@fluentui-react-native/text';
 import { IPressableProps } from '@fluentui-react-native/pressable';
 import { FontTokens, IForegroundColorTokens, IBackgroundColorTokens, IBorderTokens } from '@fluentui-react-native/tokens';
-import { IFocusable, IPressableState } from '@fluentui-react-native/interactive-hooks';
+import { IPressableState } from '@fluentui-react-native/interactive-hooks';
 import { IconProps } from '@fluentui-react-native/icon';
 
 export const contextualMenuItemName = 'ContextualMenuItem';
@@ -64,7 +64,7 @@ export interface ContextualMenuItemProps extends Omit<IPressableProps, 'onPress'
   /**
    * A RefObject to access the IContextualMenuItem interface. Use this to access the public methods and properties of the component.
    */
-  componentRef?: React.RefObject<IFocusable>;
+  componentRef?: React.RefObject<View>;
   /**
    * A callback to call on ContextualMenuItem click event
    */

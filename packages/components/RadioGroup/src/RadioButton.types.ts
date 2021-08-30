@@ -1,8 +1,7 @@
 import * as React from 'react';
-import { ViewProps } from 'react-native';
+import { View, ViewProps } from 'react-native';
 import { IRenderData } from '@uifabricshared/foundation-composable';
 import { ITextProps } from '@fluentui-react-native/text';
-import { IFocusable } from '@fluentui-react-native/interactive-hooks';
 import type { IViewWin32Props } from '@office-iss/react-native-win32';
 import { FontTokens, IForegroundColorTokens, IBackgroundColorTokens, IBorderTokens } from '@fluentui-react-native/tokens';
 import { IPressableProps } from '@fluentui-react-native/pressable';
@@ -48,9 +47,9 @@ export interface IRadioButtonProps extends IPressableProps {
   ariaSetSize?: number;
 
   /**
-   * A RefObject to access the IFocusable interface. Use this to access the public methods and properties of the component.
+   * A RefObject. Use this to access the public methods and properties of the component.
    */
-  componentRef?: React.RefObject<IFocusable>;
+  componentRef?: React.RefObject<View>;
 }
 
 export interface IRadioButtonTokens extends FontTokens, IForegroundColorTokens, IBackgroundColorTokens, IBorderTokens {

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { ScreenRect, Text, View, Switch, Picker } from 'react-native';
-import { Button, Callout, Separator, IFocusable, RestoreFocusEvent, DismissBehaviors } from '@fluentui/react-native';
+import { Button, Callout, Separator, RestoreFocusEvent, DismissBehaviors } from '@fluentui/react-native';
 import { CALLOUT_TESTPAGE } from './consts';
 import { Test, TestSection, PlatformStatus } from '../Test';
 
@@ -48,8 +48,8 @@ const standardCallout: React.FunctionComponent = () => {
   const redTargetRef = React.useRef<View>(null);
   const blueTargetRef = React.useRef<View>(null);
   const greenTargetRef = React.useRef<View>(null);
-  const decoyBtn1Ref = React.useRef<IFocusable>(null);
-  const decoyBtn2Ref = React.useRef<IFocusable>(null);
+  const decoyBtn1Ref = React.useRef(null);
+  const decoyBtn2Ref = React.useRef(null);
   const [anchorRef, setAnchorRef] = React.useState(redTargetRef);
 
   const toggleShowStandardCallout = React.useCallback(() => {

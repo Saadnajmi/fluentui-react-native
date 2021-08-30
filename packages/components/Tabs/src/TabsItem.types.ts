@@ -1,8 +1,8 @@
 import * as React from 'react';
-import { ViewProps } from 'react-native';
+import { View, ViewProps } from 'react-native';
 import { IRenderData } from '@uifabricshared/foundation-composable';
 import type { IViewProps } from '@fluentui-react-native/adapters';
-import { IFocusable, IPressableState } from '@fluentui-react-native/interactive-hooks';
+import { IPressableState } from '@fluentui-react-native/interactive-hooks';
 import { ITextProps } from '@fluentui-react-native/text';
 import { IconProps, IconSourcesType } from '@fluentui-react-native/icon';
 import { FontTokens, IBackgroundColorTokens, IBorderTokens, IForegroundColorTokens } from '@fluentui-react-native/tokens';
@@ -58,9 +58,9 @@ export interface TabsItemProps extends IPressableProps {
   disabled?: boolean;
 
   /**
-   * A RefObject to access the IFocusable interface. Use this to access the public methods and properties of the component.
+   * A RefObject. Use this to access the public methods and properties of the component.
    */
-  componentRef?: React.RefObject<IFocusable>;
+  componentRef?: React.RefObject<View>;
 
   /**
    * Source URL or name of the icon to show on the TabsItem.

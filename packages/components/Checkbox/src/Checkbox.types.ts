@@ -1,11 +1,11 @@
 import * as React from 'react';
 // import { IPressableProps } from '@fluentui-react-native/pressable';
-import { IPressableState, IFocusable } from '@fluentui-react-native/interactive-hooks';
+import { IPressableState } from '@fluentui-react-native/interactive-hooks';
 import { IRenderData } from '@uifabricshared/foundation-composable';
 import { ITextProps } from '@fluentui-react-native/text';
 import { FontTokens, IForegroundColorTokens, IBackgroundColorTokens, IBorderTokens } from '@fluentui-react-native/tokens';
 import type { IViewProps } from '@fluentui-react-native/adapters';
-import { ColorValue } from 'react-native';
+import { ColorValue, View } from 'react-native';
 
 export const checkboxName = 'Checkbox';
 
@@ -61,9 +61,9 @@ export interface ICheckboxProps extends Omit<IViewProps, 'onPress'> {
   label?: string;
 
   /**
-   * A RefObject to access the IFocusable interface. Use this to access the public methods and properties of the component.
+   * A RefObject. Use this to access the public methods and properties of the component.
    */
-  componentRef?: React.RefObject<IFocusable>;
+  componentRef?: React.RefObject<View>;
 
   /**
    * Callback that is called when the checked value has changed.

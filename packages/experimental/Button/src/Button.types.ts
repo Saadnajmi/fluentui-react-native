@@ -1,8 +1,8 @@
 import * as React from 'react';
-import { ViewProps, ViewStyle, ColorValue } from 'react-native';
+import { ViewProps, ViewStyle, ColorValue, View } from 'react-native';
 import { TextProps } from '@fluentui-react-native/experimental-text';
 import { FontTokens, IBorderTokens, IShadowTokens } from '@fluentui-react-native/tokens';
-import { IFocusable, IPressableHooks, IWithPressableOptions } from '@fluentui-react-native/interactive-hooks';
+import { IPressableHooks, IWithPressableOptions } from '@fluentui-react-native/interactive-hooks';
 import type { IViewWin32Props } from '@office-iss/react-native-win32';
 import { IconProps, IconSourcesType } from '@fluentui-react-native/icon';
 
@@ -94,7 +94,7 @@ export interface ButtonProps extends Omit<IWithPressableOptions<ViewProps>, 'onP
   /**
    * A RefObject to access the IButton interface. Use this to access the public methods and properties of the component.
    */
-  componentRef?: React.RefObject<IFocusable>;
+  componentRef?: React.RefObject<View>;
   /**
    * A callback to call on button click event
    */
