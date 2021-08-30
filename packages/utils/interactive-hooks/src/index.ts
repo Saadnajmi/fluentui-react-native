@@ -1,7 +1,6 @@
 export * from './useAsPressable.types';
 export * from './useAsPressable';
 export * from './usePressability';
-export * from './useViewCommandFocus';
 export * from './useSelectedKey.hooks';
 export * from './useIconProps.hooks';
 export * from './useAsToggle';

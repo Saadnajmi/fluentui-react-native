@@ -12,7 +12,6 @@ import { foregroundColorTokens, textTokens, borderTokens, getPaletteFromTheme } 
 import {
   useAsToggle,
   useAsPressable,
-  useViewCommandFocus,
   useKeyCallback,
   useOnPressWithFocus,
 } from '@fluentui-react-native/interactive-hooks';
@@ -50,7 +49,7 @@ export const Checkbox = compose<ICheckboxType>({
 
     const pressable = useAsPressable({ onPress: toggleCheckedWithFocus, ...(rest as IPressableProps) });
 
-    const buttonRef = useViewCommandFocus(componentRef);
+    const buttonRef = componentRef;
 
     // Handles the "Space" key toggling the Checkbox
     const onKeyUpSpace = useKeyCallback(toggleChecked, ' ');

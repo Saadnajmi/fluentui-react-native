@@ -1,4 +1,3 @@
-import { useViewCommandFocus } from '@fluentui-react-native/interactive-hooks';
 import { backgroundColorTokens, borderTokens } from '@fluentui-react-native/tokens';
 import { compose, IUseComposeStyling } from '@uifabricshared/foundation-compose';
 import { mergeSettings } from '@uifabricshared/foundation-settings';
@@ -14,7 +13,7 @@ export const Callout = compose<ICalloutType>({
   displayName: calloutName,
   usePrepareProps: (props: ICalloutProps, useStyling: IUseComposeStyling<ICalloutType>) => {
     const { componentRef, target, ...rest } = props;
-    const calloutRef = useViewCommandFocus(componentRef);
+    const calloutRef = componentRef;
     const [nativeTarget, setNativeTarget] = React.useState<number | string | null>(null);
 
     React.useLayoutEffect(() => {

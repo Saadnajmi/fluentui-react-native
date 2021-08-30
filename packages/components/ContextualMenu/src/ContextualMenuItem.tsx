@@ -15,7 +15,7 @@ import { Text } from '@fluentui-react-native/text';
 import { settings } from './ContextualMenuItem.settings';
 import { backgroundColorTokens, borderTokens, textTokens, foregroundColorTokens, getPaletteFromTheme } from '@fluentui-react-native/tokens';
 import { mergeSettings } from '@uifabricshared/foundation-settings';
-import { useAsPressable, useKeyCallback, useViewCommandFocus } from '@fluentui-react-native/interactive-hooks';
+import { useAsPressable, useKeyCallback } from '@fluentui-react-native/interactive-hooks';
 import { CMContext } from './ContextualMenu';
 import { Icon } from '@fluentui-react-native/icon';
 import { createIconProps } from '@fluentui-react-native/interactive-hooks';
@@ -50,7 +50,7 @@ export const ContextualMenuItem = compose<ContextualMenuItemType>({
       [context, disabled, itemKey, onClick],
     );
 
-    const cmRef = useViewCommandFocus(componentRef);
+    const cmRef = componentRef;
 
     const onItemHoverIn = React.useCallback(() => {
       componentRef.current.focus();

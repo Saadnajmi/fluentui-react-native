@@ -3,7 +3,6 @@ import { findNodeHandle } from 'react-native';
 import { FocusZoneProps, FocusZoneSlotProps, FocusZoneType } from './FocusZone.types';
 import { IUseStyling, composable } from '@uifabricshared/foundation-composable';
 import { mergeSettings } from '@uifabricshared/foundation-settings';
-import { useViewCommandFocus } from '@fluentui-react-native/interactive-hooks';
 import { ensureNativeComponent } from '@fluentui-react-native/component-cache';
 
 const RCTFocusZone = ensureNativeComponent('RCTFocusZone');
@@ -14,7 +13,7 @@ export const FocusZone = composable<FocusZoneType>({
   usePrepareProps: (userProps: FocusZoneProps, useStyling: IUseStyling<FocusZoneType>) => {
     const { componentRef, defaultTabbableElement, isCircularNavigation, ...rest } = userProps;
 
-    const ftzRef = useViewCommandFocus(componentRef);
+    const ftzRef = componentRef;
 
     const [targetNativeTag, setTargetNativeTag] = React.useState<number>(undefined);
     React.useLayoutEffect(() => {

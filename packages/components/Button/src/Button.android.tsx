@@ -9,7 +9,7 @@ import { settings } from './Button.settings';
 import { backgroundColorTokens, borderTokens, textTokens, foregroundColorTokens, getPaletteFromTheme } from '@fluentui-react-native/tokens';
 import { filterViewProps } from '@fluentui-react-native/adapters';
 import { mergeSettings } from '@uifabricshared/foundation-settings';
-import { useAsPressable, useViewCommandFocus, createIconProps } from '@fluentui-react-native/interactive-hooks';
+import { useAsPressable, createIconProps } from '@fluentui-react-native/interactive-hooks';
 import { Icon } from '@fluentui-react-native/icon';
 
 export const Button = compose<IButtonType>({
@@ -29,7 +29,7 @@ export const Button = compose<IButtonType>({
       },
     };
 
-    const buttonRef = useViewCommandFocus(userProps.componentRef);
+    const buttonRef = userProps.componentRef;
     // grab the styling information, referencing the state as well as the props
     const styleProps = useStyling(userProps, (override: string) => state.info[override] || userProps[override]);
     // create the merged slot props

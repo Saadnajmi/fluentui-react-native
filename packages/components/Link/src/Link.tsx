@@ -7,7 +7,7 @@ import { compose, IUseComposeStyling } from '@uifabricshared/foundation-compose'
 import { ILinkProps, ILinkSlotProps, ILinkState, ILinkRenderData, IWithLinkOptions, linkName, ILinkType } from './Link.types';
 import { settings } from './Link.settings';
 import { foregroundColorTokens, textTokens, borderTokens } from '@fluentui-react-native/tokens';
-import { useAsPressable, useKeyCallback, useOnPressWithFocus, useViewCommandFocus } from '@fluentui-react-native/interactive-hooks';
+import { useAsPressable, useKeyCallback, useOnPressWithFocus } from '@fluentui-react-native/interactive-hooks';
 import { mergeSettings } from '@uifabricshared/foundation-settings';
 import { ISlots, withSlots } from '@uifabricshared/foundation-composable';
 import { IViewProps } from '@fluentui-react-native/adapters';
@@ -19,7 +19,7 @@ export function useAsLink(userProps: IWithLinkOptions<IViewProps>, ref: React.Re
 
   const [linkState, setLinkState] = React.useState({ visited: false });
   const linkOnPress = React.useCallback(
-    (e) => {
+    e => {
       setLinkState({ visited: true });
       if (url) {
         Linking.openURL(url as string);
@@ -62,7 +62,7 @@ export const Link = compose<ILinkType>({
 
     const info = { content: !!content };
 
-    const linkRef = useViewCommandFocus(componentRef);
+    const linkRef = componentRef;
 
     // grab the styling information, referencing the state as well as the props
     const styleProps = useStyling(userProps, (override: string) => linkState[override] || userProps[override]);

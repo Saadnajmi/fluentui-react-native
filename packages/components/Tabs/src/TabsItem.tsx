@@ -13,7 +13,6 @@ import { TabsContext } from './Tabs';
 import { tabsItemName, TabsItemType, TabsItemProps, TabsItemSlotProps, TabsItemRenderData, TabsItemState } from './TabsItem.types';
 import {
   useAsPressable,
-  useViewCommandFocus,
   createIconProps,
   useOnPressWithFocus,
 } from '@fluentui-react-native/interactive-hooks';
@@ -70,7 +69,7 @@ export const TabsItem = compose<TabsItemType>({
       },
     };
 
-    const buttonRef = useViewCommandFocus(componentRef);
+    const buttonRef = componentRef;
 
     /* We use the componentRef of the currently selected tabsItem to maintain the default tabbable
     element in Tabs. Since the componentRef isn't generated until after initial render,

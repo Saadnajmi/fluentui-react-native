@@ -15,7 +15,7 @@ import { Text } from '@fluentui-react-native/text';
 import { settings } from './SubmenuItem.settings';
 import { backgroundColorTokens, borderTokens, textTokens, foregroundColorTokens, getPaletteFromTheme } from '@fluentui-react-native/tokens';
 import { mergeSettings } from '@uifabricshared/foundation-settings';
-import { useAsPressable, useKeyCallback, useViewCommandFocus } from '@fluentui-react-native/interactive-hooks';
+import { useAsPressable, useKeyCallback } from '@fluentui-react-native/interactive-hooks';
 import { SvgXml } from 'react-native-svg';
 import { CMContext } from './ContextualMenu';
 import { Icon } from '@fluentui-react-native/icon';
@@ -40,7 +40,7 @@ export const SubmenuItem = compose<SubmenuItemType>({
     // Grabs the context information from Submenu (currently selected menuItem and client's onItemClick callback)
     const context = React.useContext(CMContext);
 
-    const cmRef = useViewCommandFocus(componentRef);
+    const cmRef = componentRef;
 
     const onItemHoverIn = React.useCallback(
       (e) => {
