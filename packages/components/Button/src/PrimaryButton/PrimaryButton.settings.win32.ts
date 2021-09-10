@@ -5,10 +5,10 @@ export const settings: IComposeSettings<IButtonType> = [
   {
     tokens: {
       backgroundColor: 'brandBackground',
-      color: 'neutralForegroundInverted',
+      color: 'neutralForegroundOnBrand',
       borderColor: 'brandBackground',
     },
-    // TODO - #728: neutralForegroundInverted is not working for icon color.
+    // TODO - #728: neutralForegroundOnBrand is not working for icon color.
     endIcon: {
       color: '#ffffff',
     },
@@ -26,22 +26,22 @@ export const settings: IComposeSettings<IButtonType> = [
       hovered: {
         tokens: {
           backgroundColor: 'brandBackgroundHover',
-          color: 'neutralForegroundInverted',
+          color: 'neutralForegroundOnBrand',
           borderColor: 'brandBackgroundHover',
         },
       },
       pressed: {
         tokens: {
           backgroundColor: 'brandBackgroundPressed',
-          color: 'neutralForegroundInverted',
+          color: 'neutralForegroundOnBrand',
           borderColor: 'brandBackgroundPressed',
         },
       },
       focused: {
         tokens: {
           backgroundColor: 'brandBackgroundHover',
-          borderColor: 'neutralForegroundInverted',
-          color: 'neutralForegroundInvertedHover',
+          borderColor: 'strokeFocus2',
+          color: 'neutralForegroundInvertedLinkHover',
         },
       },
     },
