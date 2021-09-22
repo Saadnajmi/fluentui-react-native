@@ -1,8 +1,24 @@
 # Change Log - @fluentui-react-native/radio-group
 
-This log was last generated on Fri, 10 Sep 2021 18:16:59 GMT and should not be manually modified.
+This log was last generated on Tue, 21 Sep 2021 16:32:12 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 0.13.10
+
+Tue, 21 Sep 2021 16:32:12 GMT
+
+### Patches
+
+- adding an adapter for macOS (67026167+chiuam@users.noreply.github.com)
+
+## 0.13.9
+
+Mon, 13 Sep 2021 23:22:43 GMT
+
+### Patches
+
+- Bump @fluentui-react-native/focus-zone to v0.7.24 (ruaraki@microsoft.com)
 
 ## 0.13.8
 

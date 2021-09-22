@@ -1,8 +1,24 @@
 # Change Log - @fluentui-react-native/checkbox
 
-This log was last generated on Fri, 10 Sep 2021 18:16:59 GMT and should not be manually modified.
+This log was last generated on Tue, 21 Sep 2021 16:32:12 GMT and should not be manually modified.
 
 <!-- Start content -->
+
+## 0.13.9
+
+Tue, 21 Sep 2021 16:32:12 GMT
+
+### Patches
+
+- fix disabled behavior on FURN Android Checkbox (email not defined)
+
+## 0.13.8
+
+Mon, 13 Sep 2021 23:22:43 GMT
+
+### Patches
+
+- Bump @fluentui-react-native/interactive-hooks to v0.10.45 (ruaraki@microsoft.com)
 
 ## 0.13.7
 
