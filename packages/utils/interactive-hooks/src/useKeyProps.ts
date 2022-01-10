@@ -5,9 +5,11 @@ export type KeyCallback = (args?: KeyPressEvent) => void;
 
 export type KeyPressProps = {
   onKeyUp?: KeyCallback;
-  validKeysUp?: string[];
+  validKeysUp?: string[]; // macOS prop
+  keyUpEvents?: any[]; // windows & win32 prop
   onKeyDown?: KeyCallback;
-  validKeysDown?: string[];
+  validKeysDown?: string[]; // macOS Prop
+  keyDownEvents?: any[]; // windows & win32 prop
 };
 
 // eslint-disable-next-line @typescript-eslint/no-empty-function

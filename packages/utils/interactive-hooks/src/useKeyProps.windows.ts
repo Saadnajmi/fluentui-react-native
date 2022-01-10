@@ -2,7 +2,7 @@ import { KeyCallback, KeyPressProps } from './useKeyProps';
 import { KeyPressEvent } from './Pressability/CoreEventTypes';
 import { memoize } from '@fluentui-react-native/memo-cache';
 import * as React from 'react';
-import { IHandledKeyboardEvent } from '@office-iss/react-native-win32';
+import { IHandledKeyboardEvent } from 'react-native-windows';
 
 /**
  * Re-usable hook for an onKeyDown event.
@@ -38,14 +38,14 @@ export function getKeyCallbackWorker(userCallback?: KeyCallback, ...keys: string
 function getKeyUpPropsWorker(userCallback: KeyCallback, ...keys: string[]): KeyPressProps {
   return {
     onKeyUp: getKeyCallbackWorker(userCallback, ...keys),
-    keyUpEvents: keys.map<IHandledKeyboardEvent>((c) => ({ key: c })),
+    keyUpEvents: keys.map<IHandledKeyboardEvent>((c) => ({ code: c })),
   };
 }
 
 function getKeyDownPropsWorker(userCallback: KeyCallback, ...keys: string[]): KeyPressProps {
   return {
     onKeyDown: getKeyCallbackWorker(userCallback, ...keys),
-    keyDownEvents: keys.map<IHandledKeyboardEvent>((c) => ({ key: c })),
+    keyDownEvents: keys.map<IHandledKeyboardEvent>((c) => ({ code: c })),
   };
 }
 
@@ -61,6 +61,6 @@ export const useKeyUpProps = memoize(getKeyUpPropsWorker);
  * Re-usable hook for an onKeyDown event.
  * @param userCallback The function you want to be called once the key has been activated on key down
  * @param keys A string of the key you want to perform some action on. If undefined, always invokes userCallback
- * @returns KeyPressProps: An object containing the correct platform specific props to handle key press, and suppress the native keypress event
+ * @returns KeyPressProps: An object containing the correct platform specific props to  handle key press, and suppress the native keypress event
  */
 export const useKeyDownProps = memoize(getKeyDownPropsWorker);
