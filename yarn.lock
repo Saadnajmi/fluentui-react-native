@@ -2804,23 +2804,22 @@
     chalk "^4.1.0"
 
 "@rnx-kit/dep-check@^1.10.1", "@rnx-kit/dep-check@^1.9.5":
-  version "1.11.0"
-  resolved "https://registry.yarnpkg.com/@rnx-kit/dep-check/-/dep-check-1.11.0.tgz#f27858e44f1f37a6b8c7d1a039a012c1384ca7f2"
-  integrity sha512-GpoZsPU+sbetmO0dA3mu4jDGdCVlLGsJlOkWKgYMS/oWmZR9/2y8VAlSaFxVfEv/BVjhBvxHxs7h+7nCaRLIzQ==
+  version "1.12.0"
+  resolved "https://registry.yarnpkg.com/@rnx-kit/dep-check/-/dep-check-1.12.0.tgz#a3c7c1eeec0877cc8d21bcab001026e4c6eb4b22"
+  integrity sha512-b99tyZRy7Q/DvFb/VPISewN5lOumrL5m9eOTxpi+pOqDsM2N3OnPLbrrm79KHNOrQE7dqp7giQ18OxZu4P1x5g==
   dependencies:
     "@rnx-kit/console" "^1.0.11"
     "@rnx-kit/tools-language" "^1.2.6"
     "@rnx-kit/tools-node" "^1.2.6"
 
 "@rnx-kit/eslint-plugin@^0.2.8":
-  version "0.2.9"
-  resolved "https://registry.yarnpkg.com/@rnx-kit/eslint-plugin/-/eslint-plugin-0.2.9.tgz#d42326e6d0fa9eab5839b949303c06a73025d7f6"
-  integrity sha512-EJZwX3JIv7UoQ4ycmcXjSCUTzT9+qxSLbXQBg8wdrjDPpEiuZfwSULlR+eMMV6uLNj+Gbs/V8/HV/kSNA9hT9A==
+  version "0.2.10"
+  resolved "https://registry.yarnpkg.com/@rnx-kit/eslint-plugin/-/eslint-plugin-0.2.10.tgz#c7d88cd3f98a96d740e5f33a520b19a86def74d0"
+  integrity sha512-ZKOF4N814dDOY2qE7BwwYvr4F8Ebe+SCDihf8azRpc/yhGUKAFzYf9jIv8bO0TUf3GPhOzgQoRGRYclTRFXgKw==
   dependencies:
     "@typescript-eslint/eslint-plugin" "^5.0.0"
     "@typescript-eslint/parser" "^5.0.0"
     enhanced-resolve "^5.8.3"
-    eslint-plugin-jest "^25.0.0"
     eslint-plugin-react "^7.26.0"
 
 "@rnx-kit/jest-preset@^0.1.9":
@@ -3420,9 +3419,9 @@
     "@types/react" "*"
 
 "@types/react@*", "@types/react@^17.0.2":
-  version "17.0.38"
-  resolved "https://registry.yarnpkg.com/@types/react/-/react-17.0.38.tgz#f24249fefd89357d5fa71f739a686b8d7c7202bd"
-  integrity sha512-SI92X1IA+FMnP3qM5m4QReluXzhcmovhZnLNm3pyeQlooi02qI7sLiepEYqT678uNiyc25XfCqxREFpy3W7YhQ==
+  version "17.0.39"
+  resolved "https://registry.yarnpkg.com/@types/react/-/react-17.0.39.tgz#d0f4cde092502a6db00a1cded6e6bf2abb7633ce"
+  integrity sha512-UVavlfAxDd/AgAacMa60Azl7ygyQNRwC/DsHZmKgNvPmRR5p70AJ5Q9EAmL2NWOJmeV+vVUI4IAP7GZrN8h8Ug==
   dependencies:
     "@types/prop-types" "*"
     "@types/scheduler" "*"
@@ -15569,9 +15568,9 @@ react-native-codegen@^0.0.6:
     nullthrows "^1.1.1"
 
 react-native-macos@^0.64.0, react-native-macos@^0.64.6:
-  version "0.64.25"
-  resolved "https://registry.yarnpkg.com/react-native-macos/-/react-native-macos-0.64.25.tgz#08574cd4ee7ac7ad2753ab26dbcd2fd08d231fb3"
-  integrity sha512-YxmuANb6wqnGZ8TpVsrGZ0kUm+Ai/lKL7LcBqq9aGGEgZ/qvcOErxZ7bBvZ5I8d7//px4s9bhpJuL41qzjze2A==
+  version "0.64.26"
+  resolved "https://registry.yarnpkg.com/react-native-macos/-/react-native-macos-0.64.26.tgz#7750188cb024bb5597932cd8a011d57a1b86b46e"
+  integrity sha512-t8DXgk/X5nhTapHb1dCo3z8xp3z8rZedW1h1clkWiAvl3L/3iinCAtB6KteC1OcCrs5qaYcnpmUR5OsuhYvyPA==
   dependencies:
     "@jest/create-cache-key-function" "^26.5.0"
     "@react-native-community/cli" "^5.0.1-alpha.1"
