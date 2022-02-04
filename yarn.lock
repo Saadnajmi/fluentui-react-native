@@ -1168,9 +1168,9 @@
     source-map-support "^0.5.16"
 
 "@babel/runtime@^7.0.0", "@babel/runtime@^7.4.3", "@babel/runtime@^7.4.5", "@babel/runtime@^7.6.0", "@babel/runtime@^7.7.2", "@babel/runtime@^7.8.0", "@babel/runtime@^7.8.4":
-  version "7.16.7"
-  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.16.7.tgz#03ff99f64106588c9c403c6ecb8c3bafbbdff1fa"
-  integrity sha512-9E9FJowqAsytyOY6LG+1KuueckRL+aQW+mKvXRXnuFGyRAyepJPmEo9vgMfXUA6O9u3IeEdv9MAkppFcaQwogQ==
+  version "7.17.0"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.17.0.tgz#b8d142fc0f7664fb3d9b5833fd40dcbab89276c0"
+  integrity sha512-etcO/ohMNaNA2UBdaXBBSX/3aEzFMRrVfaPv8Ptc0k+cWpWW0QFiGZ2XnVqQZI1Cf734LbPGmqBKWESfW4x/dQ==
   dependencies:
     regenerator-runtime "^0.13.4"
 
@@ -2804,23 +2804,22 @@
     chalk "^4.1.0"
 
 "@rnx-kit/dep-check@^1.10.1", "@rnx-kit/dep-check@^1.9.5":
-  version "1.11.0"
-  resolved "https://registry.yarnpkg.com/@rnx-kit/dep-check/-/dep-check-1.11.0.tgz#f27858e44f1f37a6b8c7d1a039a012c1384ca7f2"
-  integrity sha512-GpoZsPU+sbetmO0dA3mu4jDGdCVlLGsJlOkWKgYMS/oWmZR9/2y8VAlSaFxVfEv/BVjhBvxHxs7h+7nCaRLIzQ==
+  version "1.12.0"
+  resolved "https://registry.yarnpkg.com/@rnx-kit/dep-check/-/dep-check-1.12.0.tgz#a3c7c1eeec0877cc8d21bcab001026e4c6eb4b22"
+  integrity sha512-b99tyZRy7Q/DvFb/VPISewN5lOumrL5m9eOTxpi+pOqDsM2N3OnPLbrrm79KHNOrQE7dqp7giQ18OxZu4P1x5g==
   dependencies:
     "@rnx-kit/console" "^1.0.11"
     "@rnx-kit/tools-language" "^1.2.6"
     "@rnx-kit/tools-node" "^1.2.6"
 
 "@rnx-kit/eslint-plugin@^0.2.8":
-  version "0.2.9"
-  resolved "https://registry.yarnpkg.com/@rnx-kit/eslint-plugin/-/eslint-plugin-0.2.9.tgz#d42326e6d0fa9eab5839b949303c06a73025d7f6"
-  integrity sha512-EJZwX3JIv7UoQ4ycmcXjSCUTzT9+qxSLbXQBg8wdrjDPpEiuZfwSULlR+eMMV6uLNj+Gbs/V8/HV/kSNA9hT9A==
+  version "0.2.10"
+  resolved "https://registry.yarnpkg.com/@rnx-kit/eslint-plugin/-/eslint-plugin-0.2.10.tgz#c7d88cd3f98a96d740e5f33a520b19a86def74d0"
+  integrity sha512-ZKOF4N814dDOY2qE7BwwYvr4F8Ebe+SCDihf8azRpc/yhGUKAFzYf9jIv8bO0TUf3GPhOzgQoRGRYclTRFXgKw==
   dependencies:
     "@typescript-eslint/eslint-plugin" "^5.0.0"
     "@typescript-eslint/parser" "^5.0.0"
     enhanced-resolve "^5.8.3"
-    eslint-plugin-jest "^25.0.0"
     eslint-plugin-react "^7.26.0"
 
 "@rnx-kit/jest-preset@^0.1.9":
@@ -15569,9 +15568,9 @@ react-native-codegen@^0.0.6:
     nullthrows "^1.1.1"
 
 react-native-macos@^0.64.0, react-native-macos@^0.64.6:
-  version "0.64.25"
-  resolved "https://registry.yarnpkg.com/react-native-macos/-/react-native-macos-0.64.25.tgz#08574cd4ee7ac7ad2753ab26dbcd2fd08d231fb3"
-  integrity sha512-YxmuANb6wqnGZ8TpVsrGZ0kUm+Ai/lKL7LcBqq9aGGEgZ/qvcOErxZ7bBvZ5I8d7//px4s9bhpJuL41qzjze2A==
+  version "0.64.26"
+  resolved "https://registry.yarnpkg.com/react-native-macos/-/react-native-macos-0.64.26.tgz#7750188cb024bb5597932cd8a011d57a1b86b46e"
+  integrity sha512-t8DXgk/X5nhTapHb1dCo3z8xp3z8rZedW1h1clkWiAvl3L/3iinCAtB6KteC1OcCrs5qaYcnpmUR5OsuhYvyPA==
   dependencies:
     "@jest/create-cache-key-function" "^26.5.0"
     "@react-native-community/cli" "^5.0.1-alpha.1"
