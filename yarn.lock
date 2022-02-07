@@ -8052,10 +8052,10 @@ diff-sequences@^26.6.2:
   resolved "https://registry.yarnpkg.com/diff-sequences/-/diff-sequences-26.6.2.tgz#48ba99157de1923412eed41db6b6d4aa9ca7c0b1"
   integrity sha512-Mv/TDa3nZ9sbc5soK+OoA74BsS3mL37yixCvUAQkiuA4Wz6YtwP/K47n2rv2ovzHZvoiQeA5FTQOschKkEwB0Q==
 
-diff-sequences@^27.4.0:
-  version "27.4.0"
-  resolved "https://registry.yarnpkg.com/diff-sequences/-/diff-sequences-27.4.0.tgz#d783920ad8d06ec718a060d00196dfef25b132a5"
-  integrity sha512-YqiQzkrsmHMH5uuh8OdQFU9/ZpADnwzml8z0O5HvRNda+5UZsaX/xN+AAxfR2hWq1Y7HZnAzO9J5lJXOuDz2Ww==
+diff-sequences@^27.5.0:
+  version "27.5.0"
+  resolved "https://registry.yarnpkg.com/diff-sequences/-/diff-sequences-27.5.0.tgz#a8ac0cb742b17d6f30a6c43e233893a2402c0729"
+  integrity sha512-ZsOBWnhXiH+Zn0DcBNX/tiQsqrREHs/6oQsEVy2VJJjrTblykPima11pyHMSA/7PGmD+fwclTnKVKL/qtNREDQ==
 
 diff@^4.0.1:
   version "4.0.2"
@@ -11613,14 +11613,14 @@ jest-diff@^26.0.0, jest-diff@^26.6.2:
     pretty-format "^26.6.2"
 
 jest-diff@^27.0.0, jest-diff@^27.4.6:
-  version "27.4.6"
-  resolved "https://registry.yarnpkg.com/jest-diff/-/jest-diff-27.4.6.tgz#93815774d2012a2cbb6cf23f84d48c7a2618f98d"
-  integrity sha512-zjaB0sh0Lb13VyPsd92V7HkqF6yKRH9vm33rwBt7rPYrpQvS1nCvlIy2pICbKta+ZjWngYLNn4cCK4nyZkjS/w==
+  version "27.5.0"
+  resolved "https://registry.yarnpkg.com/jest-diff/-/jest-diff-27.5.0.tgz#34dc608a3b9159df178dd480b6d835b5e6b92082"
+  integrity sha512-zztvHDCq/QcAVv+o6rts0reupSOxyrX+KLQEOMWCW2trZgcBFgp/oTK7hJCGpXvEIqKrQzyQlaPKn9W04+IMQg==
   dependencies:
     chalk "^4.0.0"
-    diff-sequences "^27.4.0"
-    jest-get-type "^27.4.0"
-    pretty-format "^27.4.6"
+    diff-sequences "^27.5.0"
+    jest-get-type "^27.5.0"
+    pretty-format "^27.5.0"
 
 jest-docblock@^27.4.0:
   version "27.4.0"
@@ -11670,10 +11670,10 @@ jest-get-type@^26.3.0:
   resolved "https://registry.yarnpkg.com/jest-get-type/-/jest-get-type-26.3.0.tgz#e97dc3c3f53c2b406ca7afaed4493b1d099199e0"
   integrity sha512-TpfaviN1R2pQWkIihlfEanwOXK0zcxrKEE4MlU6Tn7keoXdN6/3gK/xl0yEh8DOunn5pOVGKf8hB4R9gVh04ig==
 
-jest-get-type@^27.4.0:
-  version "27.4.0"
-  resolved "https://registry.yarnpkg.com/jest-get-type/-/jest-get-type-27.4.0.tgz#7503d2663fffa431638337b3998d39c5e928e9b5"
-  integrity sha512-tk9o+ld5TWq41DkK14L4wox4s2D9MtTpKaAVzXfr5CUKm5ZK2ExcaFE0qls2W71zE/6R2TxxrK9w2r6svAFDBQ==
+jest-get-type@^27.4.0, jest-get-type@^27.5.0:
+  version "27.5.0"
+  resolved "https://registry.yarnpkg.com/jest-get-type/-/jest-get-type-27.5.0.tgz#861c24aa1b176be83c902292cb9618d580cac8a7"
+  integrity sha512-Vp6O8a52M/dahXRG/E0EJuWQROps2mDQ0sJYPgO8HskhdLwj9ajgngy2OAqZgV6e/RcU67WUHq6TgfvJb8flbA==
 
 jest-haste-map@^24.9.0:
   version "24.9.0"
@@ -15194,10 +15194,10 @@ pretty-format@^26.0.0, pretty-format@^26.5.2, pretty-format@^26.6.2:
     ansi-styles "^4.0.0"
     react-is "^17.0.1"
 
-pretty-format@^27.4.6:
-  version "27.4.6"
-  resolved "https://registry.yarnpkg.com/pretty-format/-/pretty-format-27.4.6.tgz#1b784d2f53c68db31797b2348fa39b49e31846b7"
-  integrity sha512-NblstegA1y/RJW2VyML+3LlpFjzx62cUrtBIKIWDXEDkjNeleA7Od7nrzcs/VLQvAeV4CgSYhrN39DRN88Qi/g==
+pretty-format@^27.4.6, pretty-format@^27.5.0:
+  version "27.5.0"
+  resolved "https://registry.yarnpkg.com/pretty-format/-/pretty-format-27.5.0.tgz#71e1af7a4b587d259fa4668dcd3e94af077767cb"
+  integrity sha512-xEi6BRPZ+J1AIS4BAtFC/+rh5jXlXObGZjx5+OSpM95vR/PGla78bFVHMy5GdZjP9wk3AHAMHROXq/r69zXltw==
   dependencies:
     ansi-regex "^5.0.1"
     ansi-styles "^5.0.0"
@@ -15589,9 +15589,9 @@ react-native-codegen@^0.0.6:
     nullthrows "^1.1.1"
 
 react-native-macos@^0.64.0, react-native-macos@^0.64.6:
-  version "0.64.26"
-  resolved "https://registry.yarnpkg.com/react-native-macos/-/react-native-macos-0.64.26.tgz#7750188cb024bb5597932cd8a011d57a1b86b46e"
-  integrity sha512-t8DXgk/X5nhTapHb1dCo3z8xp3z8rZedW1h1clkWiAvl3L/3iinCAtB6KteC1OcCrs5qaYcnpmUR5OsuhYvyPA==
+  version "0.64.27"
+  resolved "https://registry.yarnpkg.com/react-native-macos/-/react-native-macos-0.64.27.tgz#bcc12d50b0fb6252550a3cd7cb70dc17d3a5ed96"
+  integrity sha512-5BzD6MEU3MiDL55mFUNWtnxAmzSLk8Qi40W4ut61MXxhaYLunugR7L/FnUltvnOa/uRAPbxhUbawK5YLZEV4oQ==
   dependencies:
     "@jest/create-cache-key-function" "^26.5.0"
     "@react-native-community/cli" "^5.0.1-alpha.1"
