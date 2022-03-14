@@ -9,6 +9,20 @@ protocol CalloutWindowLifeCycleDelegate: AnyObject {
 class CalloutWindow: NSWindow {
 
 	weak var lifeCycleDelegate: CalloutWindowLifeCycleDelegate?
+	
+	private var isMonitorAllocated = false;
+	
+	private var mouseEventMonitor: Any?
+	
+	var guardedMonitor: Any? {
+		get {
+			if (isMonitorAllocated) {
+				return mouseEventMonitor
+			} else {
+				return nil
+			}
+		}
+	}
 
 	override init(contentRect: NSRect, styleMask style: NSWindow.StyleMask, backing backingStoreType: NSWindow.BackingStoreType, defer flag: Bool) {
 		super.init(contentRect: contentRect, styleMask: style, backing: backingStoreType, defer: flag)
@@ -50,6 +64,15 @@ class CalloutWindow: NSWindow {
 			return event
 		})
 	}
+	
+	
+	override func orderOut(_ sender: Any?) {
+		lifeCycleDelegate?.calloutWillDismiss(window: self);
+		if let monitor = mouseEventMonitor {
+			NSEvent.removeMonitor(monitor)
+		}
+		super.orderOut(sender)
+	}
 
 	// Required to get a key view loop in the window
 	override var canBecomeKey: Bool {
@@ -66,15 +89,30 @@ class CalloutWindow: NSWindow {
 	}
 
 	@objc private func dismissCallout() {
-		lifeCycleDelegate?.calloutWillDismiss(window: self)
+//		lifeCycleDelegate?.calloutWillDismiss(window: self)
 		orderOut(self)
+		if let childWindows = childWindows {
+			for childWindow in childWindows {
+				childWindow.orderOut(self)
+			}
+		}
 	}
 	
 	deinit {
-		if let monitor = mouseEventMonitor {
+		if let monitor = guardedMonitor {
 			NSEvent.removeMonitor(monitor)
 		}
 	}
+}
 
-	private var mouseEventMonitor: Any?
+private class guardedMouseEventMonitor {
+	var isMonitorAllocated = false
+	
+	var eventMonitor: Any?
+	
+	static func getMonitor() -> Any? {
+		if (!isMonitorAllocated) {
+			eventMonitor =
+		}
+	}
 }

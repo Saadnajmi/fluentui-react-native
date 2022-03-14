@@ -10,13 +10,12 @@ import { backgroundColorTokens, borderTokens } from '@fluentui-react-native/toke
 import { Callout } from '@fluentui-react-native/callout';
 import { ISlots, withSlots } from '@uifabricshared/foundation-composable';
 import { CMContext } from './ContextualMenu';
-import { IViewProps } from '@fluentui-react-native/adapters';
 import { FocusZone } from '@fluentui-react-native/focus-zone';
 
 export const Submenu = compose<SubmenuType>({
   displayName: submenuName,
   usePrepareProps: (userProps: SubmenuProps, useStyling: IUseComposeStyling<SubmenuType>) => {
-    const { setShowMenu, maxWidth, maxHeight, shouldFocusOnMount = true, shouldFocusOnContainer = true, ...rest } = userProps;
+    const { setShowMenu, onShow, maxWidth, maxHeight, shouldFocusOnMount = true, shouldFocusOnContainer = true, ...rest } = userProps;
 
     /**
      * On macOS, focus isn't placed by default on the first focusable element. We get around this by focusing on the inner FocusZone
@@ -39,12 +38,13 @@ export const Submenu = compose<SubmenuType>({
     // This hook updates the Selected Button and calls the customer's onClick function. This gets called after a button is pressed.
     const data = useSelectedKey(null, userProps.onItemClick);
 
-    const onShow = React.useCallback(() => {
-      userProps?.onShow && userProps.onShow();
+    const onShowCallback = React.useCallback(() => {
+      onShow?.();
       context.isSubmenuOpen = true;
-    }, [context]);
+    }, [context, onShow]);
 
     const onDismiss = React.useCallback(() => {
+      console.log('Submenu dismiss');
       userProps?.onDismiss();
       setShowMenu(false);
       context.isSubmenuOpen = false;
@@ -85,23 +85,19 @@ export const Submenu = compose<SubmenuType>({
     // Explicitly override onKeyDown to override the native windows behavior of moving focus with arrow keys.
     const onKeyDownProps = useKeyDownProps(dismissWithArrowKey, 'ArrowLeft', 'ArrowRight');
 
-    const containerPropsWin32: IViewProps = {
-      accessible: shouldFocusOnContainer,
-      focusable: shouldFocusOnContainer && containerFocus,
-      onBlur: toggleContainerFocus,
-      style: { maxHeight: maxHeight, width: maxWidth },
-    };
-
     const slotProps = mergeSettings<SubmenuSlotProps>(styleProps, {
       root: {
         ...rest,
-        onShow: onShow,
+        onShow: onShowCallback,
         onDismiss: onDismiss,
         setInitialFocus: shouldFocusOnMount,
       },
       container: {
         ...onKeyDownProps,
-        ...(Platform.OS === ('win32' as string) && { containerPropsWin32 }),
+        accessible: shouldFocusOnContainer,
+        focusable: shouldFocusOnContainer && containerFocus,
+        onBlur: toggleContainerFocus,
+        style: { maxHeight: maxHeight, width: maxWidth },
       },
       scrollView: {
         contentContainerStyle: {

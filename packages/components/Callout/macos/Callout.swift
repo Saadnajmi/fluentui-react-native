@@ -74,6 +74,9 @@ class CalloutView: RCTView, CalloutWindowLifeCycleDelegate {
 
 	func calloutWillDismiss(window: CalloutWindow) {
 		onDismissCallout()
+		if (!(calloutWindow.parent?.isEqual(to: NSApplication.shared.mainWindow) ?? false)) {
+			NSLog("submenu")
+		}
 	}
 
 	// MARK: Private methods
@@ -265,6 +268,7 @@ class CalloutView: RCTView, CalloutWindowLifeCycleDelegate {
 			}
 			let event: [AnyHashable: Any] = ["target": reactTag]
 			onDismiss(event)
+			NSLog("SAAD onDismiss sent")
 		}
 	}
 

@@ -30,10 +30,16 @@ export const Callout = compose<ICalloutType>({
       }
     }, [target]);
 
+    const dimiss = () => {
+      console.log('Hit inside Callout');
+      props.onDismiss();
+    };
+
     const slotProps = mergeSettings<ICalloutSlotProps>(useStyling(props), {
       root: {
         ref: calloutRef,
         ...(nativeTarget && { target: nativeTarget }),
+        // onDismiss: dimiss,
         ...rest,
       },
     });

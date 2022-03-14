@@ -104,6 +104,7 @@ export const ContextualMenuItem = compose<ContextualMenuItemType>({
     // create the merged slot props
     const slotProps = mergeSettings<ContextualMenuItemSlotProps>(styleProps, {
       root: {
+        // onAccessibilityTap: onItemClick,
         ref: cmRef,
         ...pressablePropsModified,
         ...onKeyUpProps,

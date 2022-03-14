@@ -32,7 +32,7 @@ export const CMContext = React.createContext<ContextualMenuContext>({
 export const ContextualMenu = compose<ContextualMenuType>({
   displayName: contextualMenuName,
   usePrepareProps: (userProps: ContextualMenuProps, useStyling: IUseComposeStyling<ContextualMenuType>) => {
-    const { setShowMenu, maxHeight, maxWidth, shouldFocusOnMount = true, shouldFocusOnContainer = false, ...rest } = userProps;
+    const { setShowMenu, onDismiss, maxHeight, maxWidth, shouldFocusOnMount = true, shouldFocusOnContainer = false, ...rest } = userProps;
 
     /**
      * On macOS, focus isn't placed by default on the first focusable element. We get around this by focusing on the inner FocusZone
@@ -53,9 +53,10 @@ export const ContextualMenu = compose<ContextualMenuType>({
     const data = useSelectedKey(null, userProps.onItemClick);
 
     const dismissCallback = React.useCallback(() => {
-      userProps.onDismiss();
+      console.log('Hit!');
+      onDismiss();
       setShowMenu?.(false);
-    }, [setShowMenu, userProps.onDismiss]);
+    }, [setShowMenu, onDismiss]);
 
     const [containerFocus, setContainerFocus] = React.useState(true);
     const toggleContainerFocus = React.useCallback(() => {
@@ -76,6 +77,7 @@ export const ContextualMenu = compose<ContextualMenuType>({
       root: {
         accessibilityRole: 'menu',
         setInitialFocus: shouldFocusOnMount,
+        onDismiss: dismissCallback,
         ...rest,
       },
       container: {
@@ -89,7 +91,7 @@ export const ContextualMenu = compose<ContextualMenuType>({
           flexDirection: 'column',
           flexGrow: 1,
         },
-        showsVerticalScrollIndicator: true,
+        showsVerticalScrollIndicator: false,
       },
       focusZone: {
         enableFocusRing: false,
