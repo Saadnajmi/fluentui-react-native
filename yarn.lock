@@ -1143,9 +1143,9 @@
     source-map-support "^0.5.16"
 
 "@babel/runtime@^7.0.0", "@babel/runtime@^7.11.2", "@babel/runtime@^7.4.3", "@babel/runtime@^7.6.0", "@babel/runtime@^7.7.2", "@babel/runtime@^7.8.0", "@babel/runtime@^7.8.4":
-  version "7.17.2"
-  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.17.2.tgz#66f68591605e59da47523c631416b18508779941"
-  integrity sha512-hzeyJyMA1YGdJTuWU0e/j4wKXrU4OMFvY2MSlaI9B7VQb0r5cxTE3EAIS2Q7Tn2RIcDkRvTA/v2JsAEhxe99uw==
+  version "7.17.7"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.17.7.tgz#a5f3328dc41ff39d803f311cfe17703418cf9825"
+  integrity sha512-L6rvG9GDxaLgFjg41K+5Yv9OMrU98sWe+Ykmc6FDJW/+vYZMhdOMKkISgzptMaERHvS2Y2lw9MDRm2gHhlQQoA==
   dependencies:
     regenerator-runtime "^0.13.4"
 
@@ -2496,9 +2496,9 @@
     chalk "^4.1.0"
 
 "@rnx-kit/dep-check@^1.10.1", "@rnx-kit/dep-check@^1.9.5":
-  version "1.12.6"
-  resolved "https://registry.yarnpkg.com/@rnx-kit/dep-check/-/dep-check-1.12.6.tgz#19d11d4ff57e70e96a670c75559b43ac10c4677e"
-  integrity sha512-tlc4RkV7KzmF9/UMJEPLvuY5gfXCGbLf5aifFRY4G86BWWd+uL4oWBYZ5LWMhS1jz7xKbkEf87iBMKmxod7jng==
+  version "1.12.7"
+  resolved "https://registry.yarnpkg.com/@rnx-kit/dep-check/-/dep-check-1.12.7.tgz#3c93e2afafd4d2d7e2d363bdccf40573cb89c7e6"
+  integrity sha512-SvdFQdPgZrpy11HCNpPau2adMw7mZlsIKBgG+ZsGp0uLhkugTYLvcNTvRnq5m2TcEfwWTebZ4T2pA1ROtNKX2w==
   dependencies:
     "@rnx-kit/console" "^1.0.11"
     "@rnx-kit/tools-language" "^1.2.6"
@@ -2525,9 +2525,9 @@
     find-up "^5.0.0"
 
 "@rnx-kit/metro-config@^1.2.26":
-  version "1.2.28"
-  resolved "https://registry.yarnpkg.com/@rnx-kit/metro-config/-/metro-config-1.2.28.tgz#9fd703f369c31c6672887653ee066d60f02ac138"
-  integrity sha512-efe1hwqsZGxTQwPvHzIvZWmD86R+U3/jbuWQkJwytnhdZ5jWOzdrUHBrMIEitOwFaq8smInR/WN2UFcsFsWEOA==
+  version "1.2.29"
+  resolved "https://registry.yarnpkg.com/@rnx-kit/metro-config/-/metro-config-1.2.29.tgz#508b10f842cdc345dfeffee81a15f95398648ccc"
+  integrity sha512-Cpaawoqw1Ta0RPc/DdmpGnJar6HfkipQfFHKT8yPKJmlOErxGfCz2BeQnIGy3n3vQ33kPh/Lea+Wl4UjncEc+A==
   dependencies:
     "@rnx-kit/babel-preset-metro-react-native" "^1.0.17"
     "@rnx-kit/tools-node" "^1.2.6"
@@ -3067,9 +3067,9 @@
     "@types/react" "*"
 
 "@types/react@*", "@types/react@^17.0.2":
-  version "17.0.39"
-  resolved "https://registry.yarnpkg.com/@types/react/-/react-17.0.39.tgz#d0f4cde092502a6db00a1cded6e6bf2abb7633ce"
-  integrity sha512-UVavlfAxDd/AgAacMa60Azl7ygyQNRwC/DsHZmKgNvPmRR5p70AJ5Q9EAmL2NWOJmeV+vVUI4IAP7GZrN8h8Ug==
+  version "17.0.40"
+  resolved "https://registry.yarnpkg.com/@types/react/-/react-17.0.40.tgz#dc010cee6254d5239a138083f3799a16638e6bad"
+  integrity sha512-UrXhD/JyLH+W70nNSufXqMZNuUD2cXHu6UjCllC6pmOQgBX4SGXOH8fjRka0O0Ee0HrFxapDD8Bwn81Kmiz6jQ==
   dependencies:
     "@types/prop-types" "*"
     "@types/scheduler" "*"
@@ -12404,9 +12404,9 @@ react-native-svg@^12.1.1:
     css-tree "^1.0.0-alpha.39"
 
 react-native-test-app@^1.1.4:
-  version "1.1.7"
-  resolved "https://registry.yarnpkg.com/react-native-test-app/-/react-native-test-app-1.1.7.tgz#1e1b3a75f95e2cbe1cb42d95d7514e412f5a2583"
-  integrity sha512-XtLOA0ns4mup2SmUmxXYXgVHU5XvMQivaDsrKxlq9sjh+8poo4tm1XB4aJxGljC+b9/0ym6HpPL9L8U3lWu+hQ==
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/react-native-test-app/-/react-native-test-app-1.2.0.tgz#4f50a03df02ec735aaa87a00b5f494a383b3c486"
+  integrity sha512-6dVWeFluY9sDVKBNrR8lfX5jxTtxX1/Bcr/q1806280eomnEi3uVRt75wB2zcxZ8Kv+zEyujgYfjl7weCfBSQg==
   dependencies:
     ajv "^8.0.0"
     chalk "^4.1.0"
