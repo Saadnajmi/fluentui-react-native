@@ -59,20 +59,20 @@
   integrity sha512-pRbWc+x6diEvIqYn9bvDuisHYmnjGc8VVHenkbMBD9qEdkIwz4yzv433Xx/SMfHr4fRf6IFS+DOUKFzFcjNNgg==
 
 "@appium/support@^2.55.3", "@appium/support@^2.56.1", "@appium/support@^2.57.0", "@appium/support@^2.58.0":
-  version "2.58.0"
-  resolved "https://registry.yarnpkg.com/@appium/support/-/support-2.58.0.tgz#819a56885db077d523f81895a672ce730098672f"
-  integrity sha512-h3eCFekYauNDi6/JZdy/j7CekOflugwpTJVm6Ux45W6YGWj47XU1HyX/58k1ghqZK9V3m+Jp8WgyERLi2C0cRQ==
+  version "2.59.1"
+  resolved "https://registry.yarnpkg.com/@appium/support/-/support-2.59.1.tgz#aad221506c303ea623052e0d24bf584759e6ad0c"
+  integrity sha512-+gKgph7hj33LXh0Pkx4APWvj48KMOaDkQ/lwK+Alq0ElfOcmwjxPtGXqvdIu5Niy29nCHwrlHMCAA8OGa096Lw==
   dependencies:
-    "@babel/runtime" "7.17.9"
+    "@babel/runtime" "7.18.3"
     archiver "5.3.1"
     axios "0.27.2"
     base64-stream "1.0.0"
     bluebird "3.7.2"
-    bplist-creator "0.1.0"
-    bplist-parser "0.3.1"
+    bplist-creator "0.1.1"
+    bplist-parser "0.3.2"
     form-data "4.0.0"
     get-stream "6.0.1"
-    glob "8.0.1"
+    glob "8.0.3"
     jimp "0.16.1"
     jsftp "2.1.3"
     klaw "3.0.0"
@@ -1296,7 +1296,7 @@
   dependencies:
     regenerator-runtime "^0.13.4"
 
-"@babel/runtime@^7.0.0", "@babel/runtime@^7.7.2", "@babel/runtime@^7.8.0", "@babel/runtime@^7.8.4":
+"@babel/runtime@7.18.3", "@babel/runtime@^7.0.0", "@babel/runtime@^7.7.2", "@babel/runtime@^7.8.0", "@babel/runtime@^7.8.4":
   version "7.18.3"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.18.3.tgz#c7b654b57f6f63cf7f8b418ac9ca04408c4579f4"
   integrity sha512-38Y8f7YUhce/K7RMwTp7m0uCumpv9hZkitCbBClqQIow1qSbCvGkcegKOXpEWCQLfWmevgRiWokZ1GkpfhbZug==
@@ -2392,9 +2392,9 @@
     find-up "^5.0.0"
 
 "@rnx-kit/metro-config@^1.2.26":
-  version "1.2.31"
-  resolved "https://registry.yarnpkg.com/@rnx-kit/metro-config/-/metro-config-1.2.31.tgz#827e99d95399b625d638728f57b60dfc4dfce1d8"
-  integrity sha512-fbdrN4ZvdSsG5xnOjbiycmLozl3iDcALKwjVSeb1CDsufIl1+LKkW5tWWtpTYlxGRddQwf4y2a2nomjSk2Zpuw==
+  version "1.2.32"
+  resolved "https://registry.yarnpkg.com/@rnx-kit/metro-config/-/metro-config-1.2.32.tgz#7e4139ac95d5d6c9b8158689368b5460f2857561"
+  integrity sha512-ECJPK5A0arRkx9eGIcMXnLu8ZM8BmjW19kfYz+EOJdEoNRcUkPC7edyomH83PTouEYg7OCQ3bQK1R7Zb6ysoFA==
   dependencies:
     "@rnx-kit/babel-preset-metro-react-native" "^1.0.17"
     "@rnx-kit/tools-node" "^1.2.7"
@@ -4475,10 +4475,10 @@ bplist-creator@0.0.8:
   dependencies:
     stream-buffers "~2.2.0"
 
-bplist-creator@0.1.0:
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/bplist-creator/-/bplist-creator-0.1.0.tgz#018a2d1b587f769e379ef5519103730f8963ba1e"
-  integrity sha512-sXaHZicyEEmY86WyueLTQesbeoH/mquvarJaQNbjuOQO+7gbFcDEWqKmcWA4cOTLzFlfgvkiVxolk1k5bBIpmg==
+bplist-creator@0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/bplist-creator/-/bplist-creator-0.1.1.tgz#ef638af058a7021e10ebfd557ffd73d95e6799fc"
+  integrity sha512-Ese7052fdWrxp/vqSJkydgx/1MdBnNOCV2XVfbmdGWD2H6EYza+Q4pyYSuVSnCUD22hfI/BFI4jHaC3NLXLlJQ==
   dependencies:
     stream-buffers "2.2.x"
 
@@ -4489,10 +4489,10 @@ bplist-parser@0.2.0:
   dependencies:
     big-integer "^1.6.44"
 
-bplist-parser@0.3.1:
-  version "0.3.1"
-  resolved "https://registry.yarnpkg.com/bplist-parser/-/bplist-parser-0.3.1.tgz#e1c90b2ca2a9f9474cc72f6862bbf3fee8341fd1"
-  integrity sha512-PyJxiNtA5T2PlLIeBot4lbp7rj4OadzjnMZD/G5zuBNt8ei/yCU7+wW0h2bag9vr8c+/WuRWmSxbqAl9hL1rBA==
+bplist-parser@0.3.2:
+  version "0.3.2"
+  resolved "https://registry.yarnpkg.com/bplist-parser/-/bplist-parser-0.3.2.tgz#3ac79d67ec52c4c107893e0237eb787cbacbced7"
+  integrity sha512-apC2+fspHGI3mMKj+dGevkGo/tCqVB8jMb6i+OX+E29p0Iposz07fABkRIfVUPNd5A5VbuOz1bZbnmkKLYF+wQ==
   dependencies:
     big-integer "1.6.x"
 
@@ -7121,17 +7121,16 @@ glob-parent@^6.0.1:
   dependencies:
     is-glob "^4.0.3"
 
-glob@8.0.1:
-  version "8.0.1"
-  resolved "https://registry.yarnpkg.com/glob/-/glob-8.0.1.tgz#00308f5c035aa0b2a447cd37ead267ddff1577d3"
-  integrity sha512-cF7FYZZ47YzmCu7dDy50xSRRfO3ErRfrXuLZcNIuyiJEco0XSrGtuilG19L5xp3NcwTx7Gn+X6Tv3fmsUPTbow==
+glob@8.0.3:
+  version "8.0.3"
+  resolved "https://registry.yarnpkg.com/glob/-/glob-8.0.3.tgz#415c6eb2deed9e502c68fa44a272e6da6eeca42e"
+  integrity sha512-ull455NHSHI/Y1FqGaaYFaLGkNMMJbavMrEGFXG/PGrg6y7sutWHUHrz6gy6WEBH6akM1M414dWKCNs+IhKdiQ==
   dependencies:
     fs.realpath "^1.0.0"
     inflight "^1.0.4"
     inherits "2"
     minimatch "^5.0.1"
     once "^1.3.0"
-    path-is-absolute "^1.0.0"
 
 glob@^6.0.1:
   version "6.0.4"
