@@ -3251,10 +3251,10 @@
     "@types/node" "*"
     form-data "^3.0.0"
 
-"@types/node@*":
-  version "18.0.0"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-18.0.0.tgz#67c7b724e1bcdd7a8821ce0d5ee184d3b4dd525a"
-  integrity sha512-cHlGmko4gWLVI27cGJntjs/Sj8th9aYwplmZFwmmgYQQvL5NUsgVJG7OddLvNfLqYS31KFN0s3qlaD9qCaxACA==
+"@types/node@*", "@types/node@^18.0.0":
+  version "18.6.2"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-18.6.2.tgz#ffc5f0f099d27887c8d9067b54e55090fcd54126"
+  integrity sha512-KcfkBq9H4PI6Vpu5B/KoPeuVDAbmi+2mDBqGPGUgoL7yXQtcWGu2vJWmmRkneWK3Rh0nIAX192Aa87AqKHYChQ==
 
 "@types/node@12.20.24":
   version "12.20.24"
@@ -3275,11 +3275,6 @@
   version "12.20.47"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-12.20.47.tgz#ca9237d51f2a2557419688511dab1c8daf475188"
   integrity sha512-BzcaRsnFuznzOItW1WpQrDHM7plAa7GIDMZ6b5pnMbkqEtM/6WCOhvZar39oeMQP79gwvFUWjjptE7/KGcNqFg==
-
-"@types/node@^18.0.0":
-  version "18.6.2"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-18.6.2.tgz#ffc5f0f099d27887c8d9067b54e55090fcd54126"
-  integrity sha512-KcfkBq9H4PI6Vpu5B/KoPeuVDAbmi+2mDBqGPGUgoL7yXQtcWGu2vJWmmRkneWK3Rh0nIAX192Aa87AqKHYChQ==
 
 "@types/normalize-package-data@^2.4.0":
   version "2.4.1"
@@ -3736,15 +3731,15 @@
     glob "^8.0.3"
 
 "@wdio/jasmine-framework@^7.13.0":
-  version "7.23.0"
-  resolved "https://registry.yarnpkg.com/@wdio/jasmine-framework/-/jasmine-framework-7.23.0.tgz#d064ed49e7b4c328894a1298bcf61c45cbff7086"
-  integrity sha512-vydSt3G8NV48VhxtISV8xsM1sPDx3MuRYeGNhXZEBwd2kt9U2BhL104BWH8dKVqZFk1jhGPzTgwEvP8cq3x/bQ==
+  version "7.24.0"
+  resolved "https://registry.yarnpkg.com/@wdio/jasmine-framework/-/jasmine-framework-7.24.0.tgz#b2650a25b461df00217d094849f75d3d954f660b"
+  integrity sha512-TVXj+m7feScaeZbN17T63ZXF8nDhY0zEi4TSizM2Yi42cKsissQJ4JJ571oBChSqX3mslk9LQLrBpXyuLCIKKg==
   dependencies:
     "@types/jasmine" "3.10.3"
     "@types/node" "^18.0.0"
     "@wdio/logger" "7.19.0"
-    "@wdio/types" "7.23.0"
-    "@wdio/utils" "7.23.0"
+    "@wdio/types" "7.24.0"
+    "@wdio/utils" "7.24.0"
     expect-webdriverio "^3.0.0"
     jasmine "3.10.0"
 
@@ -3842,6 +3837,14 @@
     "@types/node" "^18.0.0"
     got "^11.8.1"
 
+"@wdio/types@7.24.0":
+  version "7.24.0"
+  resolved "https://registry.yarnpkg.com/@wdio/types/-/types-7.24.0.tgz#ded79460f8a2a4892232e2707fb8d0ce3694bfd5"
+  integrity sha512-wJZ+1lIHFz5aWXSO+k91wX8tfZdpyX4YYoker5xfC4zvM7ypyK81dZyiE5whS+QFL3VTCPP8dXNjwX5f5h+YEw==
+  dependencies:
+    "@types/node" "^18.0.0"
+    got "^11.8.1"
+
 "@wdio/utils@7.23.0":
   version "7.23.0"
   resolved "https://registry.yarnpkg.com/@wdio/utils/-/utils-7.23.0.tgz#04056cea87c5f94fb3dc0cc7951beb6161120e9a"
@@ -3849,6 +3852,15 @@
   dependencies:
     "@wdio/logger" "7.19.0"
     "@wdio/types" "7.23.0"
+    p-iteration "^1.1.8"
+
+"@wdio/utils@7.24.0":
+  version "7.24.0"
+  resolved "https://registry.yarnpkg.com/@wdio/utils/-/utils-7.24.0.tgz#f6d4c8fce057a2064f87fe6e4f8fa77286058129"
+  integrity sha512-VWfFT1Ket3pAt19kY5lPRuwJDheKF4hMwG0AiezkqqerDl/m+fcb4a6pj1WHjlawvlYM4MM15iBZFxYfphG9lg==
+  dependencies:
+    "@wdio/logger" "7.19.0"
+    "@wdio/types" "7.24.0"
     p-iteration "^1.1.8"
 
 "@wojtekmaj/enzyme-adapter-react-17@^0.6.5":
