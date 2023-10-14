@@ -7553,7 +7553,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"appium-adb@npm:^9.14.1, appium-adb@npm:^9.14.12":
+"appium-adb@npm:^9.12.0, appium-adb@npm:^9.14.1, appium-adb@npm:^9.14.12":
   version: 9.14.12
   resolution: "appium-adb@npm:9.14.12"
   dependencies:
@@ -7572,12 +7572,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"appium-android-driver@npm:^5.14.10":
-  version: 5.14.10
-  resolution: "appium-android-driver@npm:5.14.10"
+"appium-android-driver@npm:^6.0.0":
+  version: 6.0.1
+  resolution: "appium-android-driver@npm:6.0.1"
   dependencies:
-    appium-adb: ^9.14.12
-    appium-chromedriver: ^5.2.0
+    appium-adb: ^9.12.0
+    appium-chromedriver: ^5.5.1
     asyncbox: ^2.8.0
     axios: ^1.x
     bluebird: ^3.4.7
@@ -7585,21 +7585,44 @@ __metadata:
     lodash: ^4.17.4
     lru-cache: ^7.3.0
     moment: ^2.24.0
-    moment-timezone: ^0.x
+    moment-timezone: ^0.5.26
     portfinder: ^1.0.6
     portscanner: 2.2.0
     semver: ^7.0.0
     shared-preferences-builder: ^0.x
     source-map-support: ^0.x
     teen_process: ^2.0.0
+    type-fest: ^3.11.1
     ws: ^8.0.0
   peerDependencies:
     appium: ^2.0.0-beta.40
-  checksum: 73e2ea049792b380207efdc3e87c5dced45946ea23349c55a228e6fb8ba4044910cbbeebf3acf9321e1d50fb518a80bb7ec0e3ed0f28ef3a1c16cb95c8b348e9
+  checksum: a282a967ebe55055b1d073e5befe304da7680bba621588a3594386cf5cae35d643998d19568a73ef502abf9ed102fe84023db14d2d040e077a0c7e066b0f3df9
   languageName: node
   linkType: hard
 
-"appium-chromedriver@npm:^5.2.0, appium-chromedriver@npm:^5.6.5":
+"appium-chromedriver@npm:^5.5.1":
+  version: 5.6.13
+  resolution: "appium-chromedriver@npm:5.6.13"
+  dependencies:
+    "@appium/base-driver": ^9.1.0
+    "@appium/support": ^4.0.0
+    "@xmldom/xmldom": ^0.x
+    appium-adb: ^9.14.1
+    asyncbox: ^2.0.2
+    axios: ^1.x
+    bluebird: ^3.5.1
+    compare-versions: ^6.0.0
+    fancy-log: ^2.0.0
+    lodash: ^4.17.4
+    semver: ^7.0.0
+    source-map-support: ^0.x
+    teen_process: ^2.0.0
+    xpath: ^0.x
+  checksum: 7122798e037aeb6d5782561bd448b176618845640fad1a9e25852d79334e779e896dbe114f14a721db3452e0a4c55ee890476caa373835a55929d8028f66d294
+  languageName: node
+  linkType: hard
+
+"appium-chromedriver@npm:^5.6.5":
   version: 5.6.12
   resolution: "appium-chromedriver@npm:5.6.12"
   dependencies:
@@ -7709,12 +7732,11 @@ __metadata:
   linkType: hard
 
 "appium-uiautomator2-driver@npm:^2.29.0":
-  version: 2.29.11
-  resolution: "appium-uiautomator2-driver@npm:2.29.11"
+  version: 2.30.0
+  resolution: "appium-uiautomator2-driver@npm:2.30.0"
   dependencies:
-    "@babel/runtime": ^7.0.0
     appium-adb: ^9.14.12
-    appium-android-driver: ^5.14.10
+    appium-android-driver: ^6.0.0
     appium-chromedriver: ^5.6.5
     appium-uiautomator2-server: ^5.12.2
     asyncbox: ^2.3.1
@@ -7725,9 +7747,10 @@ __metadata:
     portscanner: ^2.2.0
     source-map-support: ^0.x
     teen_process: ^2.0.0
+    type-fest: ^3.12.0
   peerDependencies:
-    appium: ^2.0.0-beta.40
-  checksum: f1091bcffecd6212d9799ba300c7e425bc3e01a21c7fb11091f9e8401b791fd0c188ae9191784122c1719a692f5f2b482458ca6d3b81ec93e7503ccd21cd94f3
+    appium: ^2.0.0
+  checksum: 77e201fdebb40c303a83ce931235ef37186f91eb261d6b050fae4f809ffb298b846bd6c8cedb85d1ce89564566feaecd2b84e894f571bb9c2991135f0077f773
   languageName: node
   linkType: hard
 
@@ -15995,6 +16018,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"moment-timezone@npm:^0.5.26":
+  version: 0.5.43
+  resolution: "moment-timezone@npm:0.5.43"
+  dependencies:
+    moment: ^2.29.4
+  checksum: 8075c897ed8a044f992ef26fe8cdbcad80caf974251db424cae157473cca03be2830de8c74d99341b76edae59f148c9d9d19c1c1d9363259085688ec1cf508d0
+  languageName: node
+  linkType: hard
+
 "moment-timezone@npm:^0.x":
   version: 0.5.40
   resolution: "moment-timezone@npm:0.5.40"
@@ -19977,7 +20009,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"type-fest@npm:3.13.1":
+"type-fest@npm:3.13.1, type-fest@npm:^3.11.1, type-fest@npm:^3.12.0":
   version: 3.13.1
   resolution: "type-fest@npm:3.13.1"
   checksum: c06b0901d54391dc46de3802375f5579868949d71f93b425ce564e19a428a0d411ae8d8cb0e300d330071d86152c3ea86e744c3f2860a42a79585b6ec2fdae8e
