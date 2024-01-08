@@ -1998,7 +1998,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@colors/colors@npm:1.6.0":
+"@colors/colors@npm:1.6.0, @colors/colors@npm:^1.6.0":
   version: 1.6.0
   resolution: "@colors/colors@npm:1.6.0"
   checksum: aa209963e0c3218e80a4a20553ba8c0fbb6fa13140540b4e5f97923790be06801fc90172c1114fc8b7e888b3d012b67298cde6b9e81521361becfaee400c662f
@@ -7681,11 +7681,13 @@ __metadata:
   linkType: hard
 
 "appium-mac2-driver@npm:^1.8.2":
-  version: 1.8.4
-  resolution: "appium-mac2-driver@npm:1.8.4"
+  version: 1.9.0
+  resolution: "appium-mac2-driver@npm:1.9.0"
   dependencies:
     "@appium/strongbox": ^0.x
-    asyncbox: ^2.0.2
+    "@colors/colors": ^1.6.0
+    appium-xcode: ^5.1.4
+    asyncbox: ^3.0.0
     axios: ^1.x
     bluebird: ^3.5.1
     lodash: ^4.17.4
@@ -7693,8 +7695,8 @@ __metadata:
     source-map-support: ^0.x
     teen_process: ^2.0.1
   peerDependencies:
-    appium: ^2.0.0
-  checksum: e57a30596229526a63d06401741dc7a68cdf0fed73b94b81085c8f390d7704cbc2f3876895e3217666a0049fbb1c6ed4f9cfe4dad91199985f9ac9564f32fb4c
+    appium: ^2.4.1
+  checksum: 3ad66bf92651581c9a948d47d6d2469f5c717edfe428f9391b7b873e4f1bd3d8121f629002766db72c80b9036272848e914dec59a4151cd65d9399aa3487cd78
   languageName: node
   linkType: hard
 
@@ -8437,6 +8439,17 @@ __metadata:
     lodash: ^4.17.4
     source-map-support: ^0.5.5
   checksum: 74b8aa95596acffbf2321a1a20610707542003821b3771e3f596f933afca4bd60551b462c909933d9008ecdb075b1479368b1f23cae29a63cbd58c55612edbce
+  languageName: node
+  linkType: hard
+
+"asyncbox@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "asyncbox@npm:3.0.0"
+  dependencies:
+    bluebird: ^3.5.1
+    lodash: ^4.17.4
+    source-map-support: ^0.x
+  checksum: 662f4617c03857f146a1b730175b85fd824f11b30dab42be0fe6a17bf10b3d488ef468e6f73c38760f9058a4815f0d919eda6f3460fb0e2f591e8249b1d9ad2a
   languageName: node
   linkType: hard
 
