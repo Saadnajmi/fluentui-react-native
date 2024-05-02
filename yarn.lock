@@ -6456,12 +6456,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@rnx-kit/react-native-host@npm:^0.4.6":
-  version: 0.4.6
-  resolution: "@rnx-kit/react-native-host@npm:0.4.6"
+"@rnx-kit/react-native-host@npm:^0.4.8":
+  version: 0.4.8
+  resolution: "@rnx-kit/react-native-host@npm:0.4.8"
   peerDependencies:
     react-native: ">=0.66"
-  checksum: 10c0/0b69a4ae90df23ce5c39176a35c556c7595686df805c1cd93ef1aecacd47713a085d36c833f0f9856803ea56d6456bad97c9f36dbd0ef081826abf4abfcc657d
+  checksum: 10c0/43bbd652b9c06b5015c79c8240e11dbb00564261ac1441b8ff08b86f07c74701b541ad4b3d30bbeb5ba964bae5fe2baea8459907ef76332128e38fff9facadf7
   languageName: node
   linkType: hard
 
@@ -18635,17 +18635,16 @@ __metadata:
   linkType: hard
 
 "react-native-test-app@npm:^3.4.7":
-  version: 3.5.9
-  resolution: "react-native-test-app@npm:3.5.9"
+  version: 3.6.1
+  resolution: "react-native-test-app@npm:3.6.1"
   dependencies:
-    "@rnx-kit/react-native-host": "npm:^0.4.6"
+    "@rnx-kit/react-native-host": "npm:^0.4.8"
     ajv: "npm:^8.0.0"
     cliui: "npm:^8.0.0"
     fast-xml-parser: "npm:^4.0.0"
     prompts: "npm:^2.4.0"
     semver: "npm:^7.3.5"
     uuid: "npm:^9.0.0"
-    yoctocolors: "npm:^2.0.0"
   peerDependencies:
     "@callstack/react-native-visionos": 0.73 - 0.74
     "@expo/config-plugins": ">=5.0"
@@ -18667,7 +18666,7 @@ __metadata:
     init: scripts/init.mjs
     init-test-app: scripts/init.mjs
     install-windows-test-app: windows/test-app.mjs
-  checksum: 10c0/9e4965ff8fe145f07b35ae64bc79371af9f9af1448fa473acb5b3ca950b92eb0f13da53e649a2049754c2e7454d520f2b4d045bc18520250a9c6b8f22fd57631
+  checksum: 10c0/4a1d278b41cde344ff38b3975c57fe085a3a4a06f05f2e0046b75e94261e4f73010ab73225aca2c36e2f07797356c8fdb46d9ad5fc0555009bae5ebfa070e1da
   languageName: node
   linkType: hard
 
@@ -22223,13 +22222,6 @@ __metadata:
   version: 1.0.0
   resolution: "yocto-queue@npm:1.0.0"
   checksum: 10c0/856117aa15cf5103d2a2fb173f0ab4acb12b4b4d0ed3ab249fdbbf612e55d1cadfd27a6110940e24746fb0a78cf640b522cc8bca76f30a3b00b66e90cf82abe0
-  languageName: node
-  linkType: hard
-
-"yoctocolors@npm:^2.0.0":
-  version: 2.0.0
-  resolution: "yoctocolors@npm:2.0.0"
-  checksum: 10c0/994f5d99e7647a1b333331ffecbbf7c4463d9c2823e371b44e21146a4496cad0f14fbe2f73f44383312a6f843d93523f830f1360009f0ac93027b167ef5c63be
   languageName: node
   linkType: hard
 
