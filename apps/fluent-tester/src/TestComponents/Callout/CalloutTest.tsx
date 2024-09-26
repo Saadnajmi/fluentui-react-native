@@ -1,6 +1,6 @@
 import * as React from 'react';
 import type { KeyboardMetrics } from 'react-native';
-import { Text, View, Switch, ScrollView, Platform } from 'react-native';
+import { Text, View, Switch, ScrollView, Platform, findNodeHandle, UIManager } from 'react-native';
 
 import { ButtonV1 as Button, Callout, Separator, Pressable } from '@fluentui/react-native';
 import type { CalloutNativeCommands, IFocusable, RestoreFocusEvent, DismissBehaviors, ICalloutProps } from '@fluentui/react-native';
@@ -11,6 +11,19 @@ import { MenuPicker } from '../Common/MenuPicker';
 import { fluentTesterStyles } from '../Common/styles';
 import type { TestSection, PlatformStatus } from '../Test';
 import { Test } from '../Test';
+
+export function callNativeMethodToFocusWindow(viewRef: React.ElementRef<any> | null) {
+  if (!viewRef) {
+    console.log('viewRef is null');
+    return;
+  }
+  const reactTag = findNodeHandle(viewRef);
+  if (reactTag == null) {
+    console.log('reactTag is null');
+    return;
+  }
+  UIManager.dispatchViewManagerCommand(reactTag, UIManager.getViewManagerConfig('FRNCallout').Commands.focusWindow, []);
+}
 
 const StandardCallout: React.FunctionComponent = () => {
   const [showStandardCallout, setShowStandardCallout] = React.useState(false);
@@ -171,7 +184,7 @@ const StandardCallout: React.FunctionComponent = () => {
 
   const onShiftFocusToCallout = React.useCallback(() => {
     console.warn('trying to focusWindow the Callout: ' + calloutRef.current);
-    calloutRef?.current.focusWindow();
+    callNativeMethodToFocusWindow(calloutRef.current);
   }, [calloutRef]);
   const onShiftFocusToCalloutButton = React.useCallback(() => {
     console.warn('trying to focus the Callout BUTTON: ' + calloutButtonRef.current);
@@ -405,14 +418,14 @@ const StandardCallout: React.FunctionComponent = () => {
               </View>
             ) : (
               //else
-              <View style={{ padding: 20, backgroundColor: calloutHovered ? 'lightgreen' : 'pink' }}>
+              <>
                 <Button onClick={toggleCalloutRef}>{'click to change anchor'}</Button>
                 <Button onClick={onShiftFocusToCalloutButton}>{'focus last button'}</Button>
                 <Button onClick={switchTargetRefOrRect}>{'click to switch between anchor and rect'}</Button>
                 <Button componentRef={calloutButtonRef} onClick={onShiftFocusToPage}>
                   {'Click to invoke blur()'}
                 </Button>
-              </View>
+              </>
             )}
           </Pressable>
         </Callout>

@@ -5,8 +5,8 @@
  */
 
 import * as React from 'react';
-import { findNodeHandle, Platform } from 'react-native';
 import type { HostComponent } from 'react-native';
+import { findNodeHandle, Platform, UIManager, ReactNative } from 'react-native';
 
 import { setAndForwardRef } from '@fluentui-react-native/interactive-hooks';
 import { backgroundColorTokens, borderTokens } from '@fluentui-react-native/tokens';
@@ -20,7 +20,7 @@ import { calloutName } from './Callout.types';
 import type { CalloutNativeCommands } from './CalloutNativeCommands.types';
 import type { NativeProps as CalloutNativeProps } from './CalloutNativeComponent';
 import CalloutNativeComponent from './CalloutNativeComponent';
-import type { NativeProps as MacOSCalloutNativeProps } from './MacOSCalloutNativeComponent';
+import type { CalloutComponentType, NativeProps as MacOSCalloutNativeProps } from './MacOSCalloutNativeComponent';
 import MacOSCalloutNativeComponent from './MacOSCalloutNativeComponent';
 
 const NativeCalloutView = Platform.select<HostComponent<MacOSCalloutNativeProps> | HostComponent<CalloutNativeProps>>({
@@ -43,6 +43,7 @@ export function useWindowCommandFocus(
       focusWindowRef.current = localRef;
     },
   });
+  console.log('useWindowCommandFocus', focusWindowRef.current);
   return _setNativeRef;
 }
 

@@ -60,12 +60,13 @@ export interface NativeProps extends ViewProps {
 
 export type CalloutComponentType = HostComponent<NativeProps>;
 export interface CalloutNativeCommands {
+  fart: (viewRef: React.ElementRef<CalloutComponentType>) => void;
   focusWindow: (viewRef: React.ElementRef<CalloutComponentType>) => void;
   blurWindow: (viewRef: React.ElementRef<CalloutComponentType>) => void;
 }
 
 export const Commands: CalloutNativeCommands = codegenNativeCommands<CalloutNativeCommands>({
-  supportedCommands: ['blurWindow', 'focusWindow'],
+  supportedCommands: ['fart', 'blurWindow', 'focusWindow'],
 });
 
 export default codegenNativeComponent<NativeProps>('RCTCallout') as CalloutComponentType;

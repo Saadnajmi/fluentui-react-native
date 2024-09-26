@@ -380,6 +380,10 @@ open class CalloutView: RCTView, CalloutWindowLifeCycleDelegate {
 	@objc private func menuDidBeginTracking() {
 		self.dismissCallout()
 	}
+    
+    open override var isFlipped: Bool {
+        return true;
+    };
 
 	// MARK: Private variables
 

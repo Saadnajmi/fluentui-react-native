@@ -38,6 +38,12 @@ RCT_ENUM_CONVERTER(NSRectEdge, (@{
 
 @interface RCT_EXTERN_MODULE(FRNCalloutManager, RCTViewManager)
 
+
+RCT_EXPORT_METHOD(fart : (id)viewTag)
+{
+    NSLog(@"fart");
+}
+
 RCT_EXPORT_METHOD(focusWindow : (nonnull NSNumber *)viewTag)
 {
 	[self.bridge.uiManager addUIBlock:^(RCTUIManager *uiManager, NSDictionary<NSNumber *, RCTUIView *> *viewRegistry) {
