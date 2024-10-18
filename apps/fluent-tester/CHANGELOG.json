@@ -2,6 +2,141 @@
   "name": "@fluentui-react-native/tester",
   "entries": [
     {
+      "date": "Thu, 17 Oct 2024 23:38:00 GMT",
+      "version": "0.170.10",
+      "tag": "@fluentui-react-native/tester_v0.170.10",
+      "comments": {
+        "patch": [
+          {
+            "author": "sanajmi@microsoft.com",
+            "package": "@fluentui-react-native/tester",
+            "commit": "71494149a1dc95ac2c2d34b211abdd5ce0856df8",
+            "comment": "Fixup Sidebar tabs in High Contrast"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Fri, 27 Sep 2024 05:53:19 GMT",
+      "version": "0.170.9",
+      "tag": "@fluentui-react-native/tester_v0.170.9",
+      "comments": {
+        "patch": [
+          {
+            "author": "ppatboyd@outlook.com",
+            "package": "@fluentui-react-native/tester",
+            "commit": "7d1fa1e8c9aab65745ceb4e19efda75fd06e33bb",
+            "comment": "Callout test page additions to test new focusWindow/blurWindow APIs on MacOS"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Thu, 26 Sep 2024 20:45:54 GMT",
+      "version": "0.170.8",
+      "tag": "@fluentui-react-native/tester_v0.170.8",
+      "comments": {
+        "patch": [
+          {
+            "author": "ruaraki@microsoft.com",
+            "package": "@fluentui-react-native/tester",
+            "commit": "3e520915dd55627f04cfd9cd0356b21ac1e6b256",
+            "comment": "Update just-scripts, jsdom. Align wdio versions across repo"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Tue, 24 Sep 2024 20:45:59 GMT",
+      "version": "0.170.7",
+      "tag": "@fluentui-react-native/tester_v0.170.7",
+      "comments": {
+        "patch": [
+          {
+            "author": "ruaraki@microsoft.com",
+            "package": "@fluentui-react-native/tester",
+            "commit": "0c0b25a2e98122f938e3bdfada36286aca8ab287",
+            "comment": "Fix build"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Tue, 24 Sep 2024 02:12:18 GMT",
+      "version": "0.170.6",
+      "tag": "@fluentui-react-native/tester_v0.170.6",
+      "comments": {
+        "patch": [
+          {
+            "author": "warleu@microsoft.com",
+            "package": "@fluentui-react-native/tester",
+            "commit": "00e9dd62d20de66550d40e5f759304afb8b70566",
+            "comment": "Screenreader compatability for svg icon package test"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Fri, 26 Jul 2024 16:00:07 GMT",
+      "version": "0.170.3",
+      "tag": "@fluentui-react-native/tester_v0.170.3",
+      "comments": {
+        "patch": [
+          {
+            "author": "nakambo@microsoft.com",
+            "package": "@fluentui-react-native/tester",
+            "commit": "434c367e8cac7d3ef78f4827dab146748f3636d6",
+            "comment": "Add FocusZone Grid test case"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Tue, 23 Jul 2024 16:56:54 GMT",
+      "version": "0.170.1",
+      "tag": "@fluentui-react-native/tester_v0.170.1",
+      "comments": {
+        "patch": [
+          {
+            "author": "nakambo@microsoft.com",
+            "package": "@fluentui-react-native/tester",
+            "commit": "ddf90fafdfaccd6318bb66f1d114f632bc5eb485",
+            "comment": "Minor tweaks for Mac behavior"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Mon, 15 Jul 2024 20:20:33 GMT",
+      "version": "0.170.0",
+      "tag": "@fluentui-react-native/tester_v0.170.0",
+      "comments": {
+        "minor": [
+          {
+            "author": "ruaraki@microsoft.com",
+            "package": "@fluentui-react-native/tester",
+            "commit": "c429c9c9dfb1a55e27290ff50d7318e5f36cd43f",
+            "comment": "Enable inline link support for win32"
+          }
+        ]
+      }
+    },
+    {
+      "date": "Fri, 12 Jul 2024 17:42:46 GMT",
+      "version": "0.169.7",
+      "tag": "@fluentui-react-native/tester_v0.169.7",
+      "comments": {
+        "patch": [
+          {
+            "author": "30809111+acoates-ms@users.noreply.github.com",
+            "package": "@fluentui-react-native/tester",
+            "commit": "0daee5ec2a9019bcb7d5820f161ba366bf870ec1",
+            "comment": "Add support for text variants and LinkV1 on windows"
+          }
+        ]
+      }
+    },
+    {
       "date": "Tue, 21 May 2024 20:54:23 GMT",
       "version": "0.169.0",
       "tag": "@fluentui-react-native/tester_v0.169.0",

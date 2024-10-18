@@ -1,8 +1,80 @@
 # Change Log - @fluentui-react-native/tester
 
-This log was last generated on Tue, 21 May 2024 20:54:23 GMT and should not be manually modified.
+<!-- This log was last generated on Thu, 17 Oct 2024 23:38:00 GMT and should not be manually modified. -->
 
 <!-- Start content -->
+
+## 0.170.10
+
+Thu, 17 Oct 2024 23:38:00 GMT
+
+### Patches
+
+- Fixup Sidebar tabs in High Contrast (sanajmi@microsoft.com)
+
+## 0.170.9
+
+Fri, 27 Sep 2024 05:53:19 GMT
+
+### Patches
+
+- Callout test page additions to test new focusWindow/blurWindow APIs on MacOS (ppatboyd@outlook.com)
+
+## 0.170.8
+
+Thu, 26 Sep 2024 20:45:54 GMT
+
+### Patches
+
+- Update just-scripts, jsdom. Align wdio versions across repo (ruaraki@microsoft.com)
+
+## 0.170.7
+
+Tue, 24 Sep 2024 20:45:59 GMT
+
+### Patches
+
+- Fix build (ruaraki@microsoft.com)
+
+## 0.170.6
+
+Tue, 24 Sep 2024 02:12:18 GMT
+
+### Patches
+
+- Screenreader compatability for svg icon package test (warleu@microsoft.com)
+
+## 0.170.3
+
+Fri, 26 Jul 2024 16:00:07 GMT
+
+### Patches
+
+- Add FocusZone Grid test case (nakambo@microsoft.com)
+
+## 0.170.1
+
+Tue, 23 Jul 2024 16:56:54 GMT
+
+### Patches
+
+- Minor tweaks for Mac behavior (nakambo@microsoft.com)
+
+## 0.170.0
+
+Mon, 15 Jul 2024 20:20:33 GMT
+
+### Minor changes
+
+- Enable inline link support for win32 (ruaraki@microsoft.com)
+
+## 0.169.7
+
+Fri, 12 Jul 2024 17:42:46 GMT
+
+### Patches
+
+- Add support for text variants and LinkV1 on windows (30809111+acoates-ms@users.noreply.github.com)
 
 ## 0.169.0
 
