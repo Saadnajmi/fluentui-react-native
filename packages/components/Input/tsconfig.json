@@ -1,4 +1,3 @@
 {
-  "extends": "@fluentui-react-native/scripts/tsconfig.json",
-  "include": ["src", "svgs.d.ts"]
+  "extends": "@fluentui-react-native/scripts/tsconfig.json"
 }

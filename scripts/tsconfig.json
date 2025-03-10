@@ -5,6 +5,7 @@
     "types": ["node", "jest"],
     "module": "CommonJS",
     "moduleResolution": "node",
+    "moduleSuffixes": [".android", ".ios", ".macos", ".windows", "win32", ""],
     "declaration": true,
     "declarationMap": true,
     "strict": true,
