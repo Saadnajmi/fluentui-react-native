@@ -30,10 +30,7 @@
   },
   "dependencies": {
     "@fluentui-react-native/adapters": "workspace:*",
-    "@fluentui-react-native/tokens": "workspace:*",
-    "@uifabricshared/foundation-composable": "workspace:*",
-    "@uifabricshared/foundation-compose": "workspace:*",
-    "@uifabricshared/foundation-settings": "workspace:*"
+    "@fluentui-react-native/tokens": "workspace:*"
   },
   "devDependencies": {
     "@fluentui-react-native/eslint-config-rules": "workspace:*",

@@ -35,9 +35,6 @@
     "@fluentui-react-native/theme-tokens": "workspace:*",
     "@fluentui-react-native/tokens": "workspace:*",
     "@fluentui-react-native/use-styling": "workspace:*",
-    "@uifabricshared/foundation-composable": "workspace:*",
-    "@uifabricshared/foundation-compose": "workspace:*",
-    "@uifabricshared/foundation-settings": "workspace:*",
     "tslib": "^2.3.1"
   },
   "devDependencies": {
