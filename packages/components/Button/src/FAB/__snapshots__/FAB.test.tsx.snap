@@ -15,9 +15,6 @@ exports[`Custom FAB with no shadow(iOS) 1`] = `
   }
   accessibilityValue={
     {
-      "max": undefined,
-      "min": undefined,
-      "now": undefined,
       "text": undefined,
     }
   }
