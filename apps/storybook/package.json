@@ -49,6 +49,8 @@
     "@fluentui-react-native/experimental-checkbox": "workspace:*",
     "@fluentui-react-native/experimental-menu-button": "workspace:*",
     "@fluentui-react-native/fluent-theme": "workspace:*",
+    "@fluentui-react-native/focus-zone": "workspace:*",
+    "@fluentui-react-native/menu-button": "workspace:*",
     "@fluentui-react-native/radio-group": "workspace:*",
     "@fluentui-react-native/switch": "workspace:*",
     "@fluentui-react-native/tablist": "workspace:*",
@@ -98,6 +100,8 @@
     "depcheck": {
       "ignoreMatches": [
         "@babel/runtime",
+        "@fluentui-react-native/focus-zone",
+        "@fluentui-react-native/menu-button",
         "@fluentui-react-native/kit-config",
         "@fluentui-react-native/lint-config-rules",
         "@react-native-community/cli",
