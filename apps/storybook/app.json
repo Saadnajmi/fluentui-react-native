@@ -1,0 +1,12 @@
+{
+  "name": "Storybook",
+  "displayName": "Fluent Storybook",
+  "singleApp": "storybook",
+  "components": [{ "appKey": "Storybook", "displayName": "Fluent Storybook", "slug": "storybook" }],
+  "resources": {
+    "android": ["dist/res", "dist/index.android.bundle"],
+    "ios": ["dist/assets", "dist/index.ios.jsbundle"],
+    "macos": ["dist/assets", "dist/index.macos.jsbundle"],
+    "windows": ["dist/assets", "dist/index.windows.bundle"]
+  }
+}

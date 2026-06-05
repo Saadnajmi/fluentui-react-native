@@ -1,0 +1,10 @@
+{
+  "extends": "@fluentui-react-native/scripts/configs/tsconfig.json",
+  "compilerOptions": {
+    "outDir": "lib",
+    "allowSyntheticDefaultImports": true,
+    "types": ["node"]
+  },
+  "include": ["src"],
+  "exclude": ["lib", "lib-commonjs", "**/*.test.ts", "**/*.test.tsx"]
+}
