@@ -9,24 +9,28 @@ internal class FRNSidebarFlippedView: NSView {
   override var isFlipped: Bool { return true }
 }
 
-/// A real native macOS split view with a Liquid Glass sidebar.
+/// A real native macOS split view with a Liquid Glass sidebar whose menu is **native**.
 ///
-/// Built on `NSSplitViewController` so the sidebar item gets the system **Liquid Glass**
-/// treatment on macOS 26 (floating, translucent) for free; the content item is wrapped in
-/// `NSBackgroundExtensionView` so its background extends *under* the floating sidebar via the
-/// safe area (the macOS 26 "background extension effect"). React content is hosted in each
-/// pane: child 0 → sidebar, child 1 → content.
-///
-/// On macOS < 26 the sidebar item still renders as a vibrant sidebar and the background
-/// extension is skipped, so the control degrades gracefully.
+/// The declarative `items` prop drives a native `NSTableView` source list inside an
+/// `NSSplitViewController` sidebar item (system Liquid Glass on macOS 26). Native selection is
+/// reported back to JS via the `onSelectItem` direct event. React `children` fill the content
+/// pane, which is wrapped in `NSBackgroundExtensionView` so its background extends under the
+/// floating sidebar. On macOS < 26 the sidebar is a vibrant source list and the background
+/// extension is skipped.
 @objc(FRNLiquidGlassSidebar)
-open class LiquidGlassSidebar: RCTView {
+open class LiquidGlassSidebar: RCTView, NSTableViewDataSource, NSTableViewDelegate {
 
   private let splitController = NSSplitViewController()
-  private let sidebarHost = FRNSidebarFlippedView()  // hosts React child 0
-  private let contentHost = FRNSidebarFlippedView()   // hosts React child 1
+  private let contentHost = FRNSidebarFlippedView()
+  private let tableView = NSTableView()
+  private let scrollView = NSScrollView()
+  private var items: [[String: Any]] = []
   private var sidebarWidth: CGFloat = 280
+  private var pendingSelectedKey: String?
   private var didInstall = false
+  private var suppressSelectionEvent = false
+
+  @objc public var onSelectItem: RCTDirectEventBlock?
 
   @objc public convenience init() {
     self.init(frame: .zero)
@@ -42,12 +46,37 @@ open class LiquidGlassSidebar: RCTView {
   }
 
   private func setupSplit() {
-    sidebarHost.autoresizingMask = [.width, .height]
-    contentHost.autoresizingMask = [.width, .height]
+    // Native source-list table for the sidebar menu.
+    let column = NSTableColumn(identifier: NSUserInterfaceItemIdentifier("FRNSidebarColumn"))
+    column.resizingMask = .autoresizingMask
+    tableView.addTableColumn(column)
+    tableView.headerView = nil
+    if #available(macOS 11.0, *) {
+      tableView.style = .sourceList
+    } else {
+      tableView.selectionHighlightStyle = .sourceList
+    }
+    tableView.backgroundColor = .clear
+    tableView.selectionHighlightStyle = .regular
+    tableView.dataSource = self
+    tableView.delegate = self
+    tableView.allowsEmptySelection = true
 
-    // Sidebar pane.
+    scrollView.documentView = tableView
+    scrollView.hasVerticalScroller = true
+    scrollView.drawsBackground = false
+    scrollView.translatesAutoresizingMaskIntoConstraints = false
+
     let sidebarVC = NSViewController()
-    sidebarVC.view = sidebarHost
+    let sidebarContainer = FRNSidebarFlippedView()
+    sidebarContainer.addSubview(scrollView)
+    NSLayoutConstraint.activate([
+      scrollView.leadingAnchor.constraint(equalTo: sidebarContainer.leadingAnchor),
+      scrollView.trailingAnchor.constraint(equalTo: sidebarContainer.trailingAnchor),
+      scrollView.topAnchor.constraint(equalTo: sidebarContainer.topAnchor),
+      scrollView.bottomAnchor.constraint(equalTo: sidebarContainer.bottomAnchor),
+    ])
+    sidebarVC.view = sidebarContainer
     let sidebarItem = NSSplitViewItem(sidebarWithViewController: sidebarVC)
     sidebarItem.canCollapse = true
     sidebarItem.minimumThickness = 180
@@ -55,6 +84,7 @@ open class LiquidGlassSidebar: RCTView {
     splitController.addSplitViewItem(sidebarItem)
 
     // Content pane, wrapped so its background extends under the floating sidebar.
+    contentHost.autoresizingMask = [.width, .height]
     let contentVC = NSViewController()
     if #available(macOS 26.0, *) {
       let ext = NSBackgroundExtensionView()
@@ -64,8 +94,7 @@ open class LiquidGlassSidebar: RCTView {
     } else {
       contentVC.view = contentHost
     }
-    let contentItem = NSSplitViewItem(viewController: contentVC)
-    splitController.addSplitViewItem(contentItem)
+    splitController.addSplitViewItem(NSSplitViewItem(viewController: contentVC))
 
     let splitView = splitController.view
     splitView.autoresizingMask = [.width, .height]
@@ -75,24 +104,41 @@ open class LiquidGlassSidebar: RCTView {
 
   open override func viewDidMoveToWindow() {
     super.viewDidMoveToWindow()
-    // Place the divider once we have a window/size, then keep the sidebar at its width.
     if window != nil, !didInstall {
       didInstall = true
       splitController.splitView.setPosition(sidebarWidth, ofDividerAt: 0)
     }
   }
 
+  // React children fill the content pane (the menu is fully native).
   open override func insertReactSubview(_ subview: NSView!, at atIndex: Int) {
-    if atIndex == 0 {
-      sidebarHost.addSubview(subview)
-    } else {
-      contentHost.addSubview(subview)
-    }
+    contentHost.addSubview(subview)
     needsLayout = true
   }
 
   open override func removeReactSubview(_ subview: NSView!) {
     subview.removeFromSuperview()
+  }
+
+  open override func layout() {
+    super.layout()
+    splitController.view.frame = bounds
+    for child in contentHost.subviews {
+      child.frame = contentHost.bounds
+    }
+  }
+
+  // MARK: - Props
+
+  @objc public func setItems(_ items: NSArray) {
+    self.items = (items as? [[String: Any]]) ?? []
+    tableView.reloadData()
+    applySelection()
+  }
+
+  @objc public func setSelectedKey(_ key: NSString?) {
+    pendingSelectedKey = key as String?
+    applySelection()
   }
 
   @objc public func setSidebarWidth(_ width: CGFloat) {
@@ -102,16 +148,57 @@ open class LiquidGlassSidebar: RCTView {
     }
   }
 
-  /// Yoga lays React children out relative to this whole view; the split positions the panes.
-  /// Pin each child to fill its pane so the two layout systems agree.
-  open override func layout() {
-    super.layout()
-    splitController.view.frame = bounds
-    for child in sidebarHost.subviews {
-      child.frame = sidebarHost.bounds
+  private func applySelection() {
+    guard let key = pendingSelectedKey,
+          let idx = items.firstIndex(where: { ($0["key"] as? String) == key })
+    else { return }
+    if tableView.selectedRow != idx {
+      suppressSelectionEvent = true
+      tableView.selectRowIndexes(IndexSet(integer: idx), byExtendingSelection: false)
+      suppressSelectionEvent = false
     }
-    for child in contentHost.subviews {
-      child.frame = contentHost.bounds
+  }
+
+  // MARK: - NSTableViewDataSource / Delegate
+
+  public func numberOfRows(in tableView: NSTableView) -> Int {
+    return items.count
+  }
+
+  public func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
+    let identifier = NSUserInterfaceItemIdentifier("FRNSidebarCell")
+    let cell: NSTableCellView
+    if let reused = tableView.makeView(withIdentifier: identifier, owner: self) as? NSTableCellView {
+      cell = reused
+    } else {
+      cell = NSTableCellView()
+      cell.identifier = identifier
+      let textField = NSTextField(labelWithString: "")
+      textField.translatesAutoresizingMaskIntoConstraints = false
+      textField.lineBreakMode = .byTruncatingTail
+      cell.addSubview(textField)
+      cell.textField = textField
+      NSLayoutConstraint.activate([
+        textField.leadingAnchor.constraint(equalTo: cell.leadingAnchor, constant: 4),
+        textField.trailingAnchor.constraint(equalTo: cell.trailingAnchor, constant: -4),
+        textField.centerYAnchor.constraint(equalTo: cell.centerYAnchor),
+      ])
     }
+
+    let item = items[row]
+    let label = item["label"] as? String ?? ""
+    if let icon = item["icon"] as? String, !icon.isEmpty {
+      cell.textField?.stringValue = "\(icon)  \(label)"
+    } else {
+      cell.textField?.stringValue = label
+    }
+    return cell
+  }
+
+  public func tableViewSelectionDidChange(_ notification: Notification) {
+    guard !suppressSelectionEvent else { return }
+    let row = tableView.selectedRow
+    guard row >= 0, row < items.count, let key = items[row]["key"] as? String else { return }
+    onSelectItem?(["key": key])
   }
 }
