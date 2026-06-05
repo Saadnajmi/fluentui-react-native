@@ -11,7 +11,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 const StorybookUIRoot = view.getStorybookUI({
   onDeviceUI: true,
   shouldPersistSelection: false,
-  initialSelection: 'overview-gallery--all-controls',
+  initialSelection: 'examples-chat-pane--default',
   storage: {
     getItem: AsyncStorage.getItem,
     setItem: AsyncStorage.setItem,

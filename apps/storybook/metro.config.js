@@ -80,13 +80,13 @@ config.resolver.assetExts = [...config.resolver.assetExts.filter((ext) => ext !=
 config.resolver.sourceExts = [...config.resolver.sourceExts, 'svg'];
 
 // `withStorybook` preserves the transformer/resolver above (it only adds
-// `unstable_allowRequireContext` and wraps `resolveRequest`). `liteMode` swaps the
-// heavy on-device UI for `@storybook/react-native-ui-lite`, avoiding reanimated /
-// gesture-handler / bottom-sheet.
+// `unstable_allowRequireContext` and wraps `resolveRequest`). Full on-device UI
+// (@storybook/react-native-ui) — needs reanimated / gesture-handler / bottom-sheet.
+// reanimated 3.10 is the last line supporting RN 0.74; its babel plugin's @babel/*
+// lookups are satisfied via a packageExtensions entry in the root .yarnrc.yml.
 module.exports = withStorybook(config, {
   configPath: path.resolve(__dirname, '.rnstorybook'),
-  liteMode: true,
   // Docs tooling pulls @storybook/react's docs preview annotations, which crash in the
-  // RN runtime (parameters.docs is undefined). Lite mode has no docs UI, so disable it.
+  // RN runtime (parameters.docs is undefined). No docs UI on device, so disable it.
   docTools: false,
 });

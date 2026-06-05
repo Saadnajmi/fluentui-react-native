@@ -15,7 +15,22 @@ react_native_path = "#{__dir__}/../node_modules/react-native"
 # (node-modules mode)
 # react_native_path = "#{__dir__}/../../../node_modules/react-native"
 
-use_test_app! do |target|
+# react-native-macos runs on JSC (no hermes-engine pod). react-native-reanimated's JSC
+# runtime includes <jsc/JSCRuntime.h>, which lives at react-native-macos/ReactCommon/jsc but
+# isn't on reanimated's header search paths on macOS. Add ReactCommon so the include resolves.
+fix_reanimated_macos = lambda do |installer|
+  react_common = File.join(__dir__, '../node_modules/react-native-macos/ReactCommon')
+  installer.pods_project.targets.each do |target|
+    next unless target.name == 'RNReanimated'
+    target.build_configurations.each do |config|
+      paths = config.build_settings['HEADER_SEARCH_PATHS'] || ['$(inherited)']
+      paths = [paths] unless paths.is_a?(Array)
+      config.build_settings['HEADER_SEARCH_PATHS'] = paths + ["\"#{react_common}\""]
+    end
+  end
+end
+
+use_test_app!(post_install: fix_reanimated_macos) do |target|
   target.app do
     platform :osx, '12'
   end
