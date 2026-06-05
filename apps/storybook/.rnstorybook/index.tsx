@@ -17,7 +17,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 const StorybookUIRoot = view.getStorybookUI({
   onDeviceUI: true,
   shouldPersistSelection: false,
-  initialSelection: 'examples-liquid-glass-sidebar--default',
+  initialSelection: 'examples-native-glass-sidebar--default',
   storage: {
     getItem: AsyncStorage.getItem,
     setItem: AsyncStorage.setItem,
