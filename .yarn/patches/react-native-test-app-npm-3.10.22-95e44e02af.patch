@@ -1,0 +1,31 @@
+diff --git a/ios/ReactTestApp/ReactTestApp-Bridging-Header.h b/ios/ReactTestApp/ReactTestApp-Bridging-Header.h
+index 2ca589763eb1b1bf35b47de8484786bd6478ba94..f0335a711de205e414eceaebd2d400e7bf7e02d2 100644
+--- a/ios/ReactTestApp/ReactTestApp-Bridging-Header.h
++++ b/ios/ReactTestApp/ReactTestApp-Bridging-Header.h
+@@ -3,6 +3,7 @@
+ #import <React/RCTAssert.h>
+ #import <React/RCTBridge.h>
+ #import <React/RCTBundleURLProvider.h>
++#import <React/RCTDevLoadingViewSetEnabled.h>
+ #import <React/RCTDevMenu.h>
+ #import <React/RCTDevSettings.h>
+ #import <React/RCTEventEmitter.h>
+diff --git a/macos/ReactTestApp/AppDelegate.swift b/macos/ReactTestApp/AppDelegate.swift
+index cbf015d841925c5e2cb23f395b2cbd5a1040e3c9..bc3a02cab0de910624f349588842b19711148589 100644
+--- a/macos/ReactTestApp/AppDelegate.swift
++++ b/macos/ReactTestApp/AppDelegate.swift
+@@ -22,6 +22,14 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
+     }
+ 
+     func applicationDidFinishLaunching(_: Notification) {
++        // FURN patch: suppress the "Bundling…" RCTDevLoadingView banner. On macOS it
++        // lingers over the Storybook on-device canvas (and screenshots) after the bundle
++        // has already loaded. Dev-only; the banner doesn't exist in release builds.
++        // `RCTDevLoadingViewSetEnabled` is exposed to Swift via the shared bridging header.
++        #if DEBUG
++        RCTDevLoadingViewSetEnabled(false)
++        #endif
++
+         NotificationCenter.default.post(
+             name: .ReactTestAppDidInitialize,
+             object: nil

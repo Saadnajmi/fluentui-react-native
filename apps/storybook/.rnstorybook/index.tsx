@@ -6,12 +6,18 @@ import { view } from './storybook.requires';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 // AsyncStorage backs the on-device navigator + remembers the last selected story. The
-// Overview/Gallery story is used as the landing selection so a showcase of controls is
-// visible on launch. Theme switching is handled by the decorator in ./withFluentTheme.
+// Liquid Glass Sidebar example is the landing selection. Theme switching is handled by the
+// decorator in ./withFluentTheme.
+//
+// This app ships the full on-device UI (@storybook/react-native-ui). A lite-UI-on-glass
+// variant exists at ./GlassLiteUI (wired via `CustomUIComponent: GlassLiteUI`) — note
+// storybook's `liteMode` resolver is a no-op under yarn pnpm, so the lite UI must be passed
+// explicitly as `CustomUIComponent`. The native Liquid Glass sidebar supersedes that JS
+// approach; see packages/experimental/LiquidGlass.
 const StorybookUIRoot = view.getStorybookUI({
   onDeviceUI: true,
   shouldPersistSelection: false,
-  initialSelection: 'examples-chat-pane--default',
+  initialSelection: 'examples-liquid-glass-sidebar--default',
   storage: {
     getItem: AsyncStorage.getItem,
     setItem: AsyncStorage.setItem,

@@ -1,0 +1,18 @@
+diff --git a/React/CoreModules/RCTDevLoadingView.mm b/React/CoreModules/RCTDevLoadingView.mm
+index c4a1579d1741e1fd6d999d1eb569b42e208e30c9..af4cf33a768e306cfcfc7631e6096ccf61e42178 100644
+--- a/React/CoreModules/RCTDevLoadingView.mm
++++ b/React/CoreModules/RCTDevLoadingView.mm
+@@ -226,6 +226,13 @@ RCT_EXPORT_METHOD(hide)
+ 
+ - (void)showProgressMessage:(NSString *)message
+ {
++  // FURN patch: unlike -showMessage:, this method (used for "Loading from Metro…" and
++  // "Bundling %") never honored RCTDevLoadingViewSetEnabled(NO) on macOS, so the banner
++  // could not be suppressed. Gate it here so the toggle actually works.
++  if (!RCTDevLoadingViewGetEnabled()) {
++    return;
++  }
++
+   if (_window != nil) {
+     // This is an optimization. Since the progress can come in quickly,
+     // we want to do the minimum amount of work to update the UI,
